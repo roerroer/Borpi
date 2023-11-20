@@ -1,0 +1,75 @@
+﻿<link href="/Bootstrap/custom.css" rel="stylesheet" />
+
+<div ng-controller="eRPICtrl">
+    <a ng-click="logout()" class="btn btn-link">Logout - {{userIdentity.userName}}</a>
+
+    <br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1">
+                <label for="search">Año</label>
+                <p class="input-group">
+                    <input type="text" name="yearSelected" ng-model="yearSelected" class="form-control"
+                           uib-datepicker-popup="{{format}}"
+                           is-open="status.opened" datepicker-options="dateOptions"
+                           date-disabled="disabled(date, mode)" close-text="Close" />
+
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <a class="panel-option tile-module1" style="height:150px;">
+                    <span class="glyphicon glyphicon-road"></span>
+                    <h4>e-RPI</h4>
+                    <p>Gestion de Propiedad Intelectual</p>
+                </a>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <div class="form-group" style="padding-left:15px;">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="std-title">Derecho de Autor, Expedientes Ingresados: {{yearSelected | date:'yyyy'}}</h4>
+                <canvas id="DAExpMensual" width="384" height="288"></canvas>
+                <div id="legend"></div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="std-title">Patentes, Expedientes Ingresados: {{yearSelected | date:'yyyy'}}</h4>
+                <canvas id="PATExpMensual" width="384" height="288"></canvas>
+                <div id="legend"></div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="std-title">Signos Distintivos, Expedientes Ingresados: {{yearSelected | date:'yyyy'}}</h4>
+                <canvas id="SIGExpMensual" width="384" height="288"></canvas>
+                <div id="legend"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" style="padding-left:15px;">
+        <div class="row jumbotron">
+            <div class="col-md-4">
+                <h4 class="std-title">Expedientes Ingresados en el anio: {{yearSelected | date:'yyyy'}}</h4>
+                <canvas id="stdIngreso" width="448" height="336"></canvas>
+                <div id="legend"></div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="std-title">Expedientes Publicados en el anio: {{yearSelected | date:'yyyy'}}</h4>
+                <canvas id="stdPublicacion" width="448" height="336"></canvas>
+                <div id="legend"></div>
+            </div>
+            <div class="col-md-4">
+                <h4 class="std-title">Expedientes Con Titulo en el anio: {{yearSelected | date:'yyyy'}}</h4>
+                <canvas id="stdTitulo" width="448" height="336"></canvas>
+                <div id="legend"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

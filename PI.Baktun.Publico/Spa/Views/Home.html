@@ -1,0 +1,77 @@
+﻿<link href="/Bootstrap/custom.css" rel="stylesheet" />
+
+<div>
+    <!--<a ng-click="logout()" class="btn btn-link">Logout - {{userIdentity.userName}}</a>-->
+    
+    <br /><br /><br /><br />
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="#misexpedientes" class="panel-option tile-module1" style="height:150px;">
+                            <span class="glyphicon glyphicon-search"></span>
+                            <h4>MARCAS</h4>
+                            <p>Marcas y demas Signos distintivos</p>
+                        </a>
+                        <br />
+                        <a href="#dexpediente" class="panel-option tile-module3" style="height:150px;">
+                            <span class="glyphicon glyphicon-search"></span>
+                            <h4>DERECHO DE AUTOR</h4>
+                            <p>Derecho de autor y conexos</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#pexpediente" class="panel-option tile-module2" style="height:150px;">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <h4>PATENTES</h4>
+                            <p>Patentes de Invencion</p>
+                        </a>
+                        <br />
+                        <a href="#gaceta" class="panel-option tile-module4" style="height:150px;">
+                            <span class="glyphicon glyphicon-barcode"></span>
+                            <h4>BOLETIN ELECTRONICO</h4>
+                            <p>Boletin electronico</p>
+                        </a>
+                    </div>
+                </div>
+
+                <uib-accordion close-others="true">
+                    <div uib-accordion-group class="panel-default">
+                        <uib-accordion-heading>
+                            <h4><a>Términos y Condiciones de Uso</a></h4>                            
+                        </uib-accordion-heading>
+                        Información del Producto: <b>BOLETIN ELECTRONICO DEL REGISTRO DE LA PROPIEDAD INTELECTUAL</b>
+                        <b>BORPI Versión: 1.0</b>, Producto Activado,este producto contiene Renovación  BORPI, Septiembre 2018, Valido Por un año de soporte y actualización, Soporte Técnico Via Remota/Presencial, SISTEMAS.
+                    </div>
+                </uib-accordion>
+
+
+                <div class="aviso-post" ng-repeat="aviso in avisos">
+                    <h2 class="aviso-post-title">{{aviso.Titulo}}</h2>
+                    <p class="aviso-post-meta"><strong>{{aviso.Fecha | date:'dd/MM/yyyy'}}</strong> publicado por <strong>{{aviso.PublicadoPor}}</strong></p>
+                    <h4 class="aviso-post-sub-title">{{aviso.Subtitulo}}</h4>
+                    <p>{{aviso.Contenido}}</p>
+                </div>
+
+                <div class="row">
+                    <style>
+                        .pagination {
+                            display: block !important;
+                        }
+                    </style>
+                    <ul uib-pagination total-items="totalItems" max-size="5"
+                        class="pagination-sm"
+                        ng-model="pageNumber"
+                        ng-change="pageChanged()"
+                        boundary-link-numbers="false" rotate="false"></ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div ng-include="'./Spa/Views/banner.html'"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

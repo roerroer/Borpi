@@ -1,0 +1,16 @@
+{
+  "name": "publico",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "node ": "node ",
+    "start": "node codify.js",
+    "build": "",
+    "test": ""
+  },
+  "private": true,
+  "dependencies": {
+    "uglify-js": "^3.4.9",
+    "uglifycss": "0.0.29"
+  }
+}

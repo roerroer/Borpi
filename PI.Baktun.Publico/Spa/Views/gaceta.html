@@ -1,0 +1,301 @@
+﻿<style>
+    #stlGaceta:after {
+        content: "Boletin Electronico";
+    }
+
+    @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+        /* Force table to not be like tables anymore */
+        .table thead,
+        .table tbody,
+        .table tbody > tr > th,
+        .table tbody > tr > td,
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+
+            .table tbody > tr > td {
+                padding: 0px inherit;
+                padding-left: 50%;
+                white-space: normal !important;
+            }
+
+            /* Hide table headers (but not display: none;, for accessibility) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+        tr {
+            border: 1px solid #ccc;
+        }
+
+        td {
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+        }
+
+            td:before {
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            /*
+    Label the data
+    */
+            td:nth-of-type(1):before {
+                content: "Fecha Edicto";
+            }
+
+            td:nth-of-type(2):before {
+                content: "Fecha de Publicacion";
+            }
+
+            td:nth-of-type(3):before {
+                content: "Expediente";
+            }
+
+            td:nth-of-type(4):before {
+                content: "";
+            }
+
+            td:nth-of-type(5):before {
+                content: "";
+            }
+
+            td:nth-of-type(6):before {
+                content: "";
+            }
+
+            td:nth-of-type(7):before {
+                content: "";
+            }
+
+            td:nth-of-type(8):before {
+                content: "-";
+            }
+    }
+</style>
+<div class="boxy" id="stlGaceta">
+    <div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Seccion</label>
+                    <select class="form-control" name="seccionGaceta" ng-change="onSeccionChange()"
+                            ng-model="seccionGaceta" ng-options="item.Nombre for item in secciones"></select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <label for="search">Busqueda:</label>
+                <input ng-model="textSearch" id="search" class="form-control" ng-model-options='{ debounce: 500 }' placeholder="Filter text">
+            </div>
+
+            <div class="col-xs-3">
+                <label for="search">Fecha</label>
+
+                <p class="input-group">
+                    <input type="text" name="fechaSelected" ng-model="fechaSelected" class="form-control"
+                           uib-datepicker-popup="{{format}}" ng-model-options='{ debounce: 1000 }'
+                           is-open="status.opened" datepicker-options="dateOptions"
+                           date-disabled="disabled(date, mode)" close-text="Close" />
+
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+
+            </div>
+
+            <div class="col-xs-2">
+                <label for="search">Items por pagina:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+            <div class="col-xs-4">
+                <br />
+                <a href="#gacetasemanal/{{seccionGaceta.Id}}" class="btn btn-default btn-lg btn-block">Boletín Semanal - Archivo</a>
+            </div>
+        </div>
+        <br>
+
+        <div class="panel panel-default" ng-if="seccionGaceta && seccionGaceta.Id==1">
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="5%">Fecha Edicto</th>
+                            <th width="5%">Fecha de Publicacion</th>
+                            <th width="5%">Expediente</th>
+                            <th width="40%">Nombre &<br />Titular</th>
+                            <th width="5%">Clase</th>
+                            <th width="25%">Mandatario</th>
+                            <th width="10%">Edicto</th>
+                            <th width="5%"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="p in Publicaciones | filter:textSearch" total-items="totalItems">
+                            <td>{{p.fecha_edicto | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.fecha_publicacion | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.expediente}}</td>
+                            <td>
+                                <span ng-if="p.format=='mp3'">
+                                    <audio controls="" style="width: 110px; height:50px">
+                                        <source ng-if="p.logotipo" src="{{p.logotipo}}" type="audio/mpeg">
+                                        ...Este browser no soporta archivos de audio
+                                    </audio>
+                                </span>
+                                <span ng-if="p.format==''">
+                                    {{p.distintivo}}
+                                </span><br />
+                                <span>{{p.titular}}</span>
+                            </td>
+                            <td>{{p.clase}}</td>
+                            <td>{{p.mandatario}}</td>
+                            <td>
+                                <a target="_blank" href="/eRegistroAPI/gaceta/edicto/{{p.Id}}">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </a>
+                            </td>
+                            <!--_self-->
+                            <td><a target="_blank" href="/eRegistroAPI/gaceta/edictoaspdf/{{p.Id}}">[Descargar]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="seccionGaceta && seccionGaceta.Id==2">
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="5%">Fecha Edicto</th>
+                            <th width="5%">Fecha de Publicacion</th>
+                            <th width="5%">Expediente</th>
+                            <th width="70%">Resumen</th>
+                            <th width="10%">Edicto</th>
+                            <th width="5%"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="p in Publicaciones | filter:textSearch " total-items="totalItems">
+                            <td>{{p.Gaceta.FechaEdicto | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.Gaceta.FechaPublicacion | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.Numero}}</td>
+                            <td>{{p.Patente.Resumen}}</td>
+                            <td>
+                                <a target="_blank" href="/eRegistroAPI/gacetapatentesedictos/edicto/{{p.Id}}">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </a>
+                            </td>
+                            <!--_self-->
+                            <td><a target="_blank" href="/eRegistroAPI/gacetapatentesedictos/edictoaspdf/{{p.Id}}">[Descargar]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="seccionGaceta && seccionGaceta.Id==3">
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="5%">Fecha Edicto</th>
+                            <th width="5%">Fecha de Publicacion</th>
+                            <th width="5%">Expediente</th>
+                            <th width="70%">Edicto</th>
+                            <th width="10%">Edicto</th>
+                            <th width="5%"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="p in Publicaciones | filter:textSearch " total-items="totalItems">
+                            <td>{{p.Gaceta.FechaEdicto | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.Gaceta.FechaPublicacion | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.Numero}}</td>
+                            <td>
+                                {{(p.Gaceta.HTMLDOC ? p.Gaceta.HTMLDOC.substring(3) : p.Gaceta.HTMLDOC)  | limitTo: 300 }}{{p.Gaceta.HTMLDOC.length > 100 ? '...' : ''}}
+                            </td>
+                            <td>
+                                <a target="_blank" href="/eRegistroAPI/GacetaMarcasAnotaciones/edicto/{{p.Id}}">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </a>
+                            </td>
+                            <!--_self-->
+                            <td><a target="_blank" href="/eRegistroAPI/GacetaMarcasAnotaciones/edictoaspdf/{{p.Id}}">[Descargar]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-if="seccionGaceta && seccionGaceta.Id==4">
+            <div class="panel-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th width="5%">Fecha Edicto</th>
+                            <th width="5%">Fecha de Publicacion</th>
+                            <th width="10%">Expediente</th>
+                            <th width="50%">Edicto</th>
+                            <th width="10%">Edicto</th>
+                            <th width="20%"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="p in Publicaciones | filter:textSearch " total-items="totalItems">
+                            <td>{{p.FechaEdicto | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.FechaPublicacion | date:'dd/MM/yyyy'}}</td>
+                            <td>{{p.Numero}}</td>
+                            <td>
+                                <span class="text-pub" ng-bind-html="p.HTMLDOC"></span>
+                            </td>
+                            <td>
+                                <a target="_blank" href="/eRegistroAPI/GacetaGrl/edicto/{{p.Id}}">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </a>
+                            </td>
+                            <!--_self-->
+                            <td><a target="_blank" href="/eRegistroAPI/GacetaGrl/edictoaspdf/{{p.Id}}">[Descargar]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--<a href="#Leyes/0" class=" btn btn-default">Agregar</a>-->
+
+        <div class="row">
+            <style>
+                .pagination {
+                    display: block !important;
+                }
+            </style>
+
+            <ul uib-pagination total-items="totalItems" max-size="3"
+                class="pagination-sm"
+                ng-model="pageNumber"
+                ng-change="pageChanged()"
+                boundary-link-numbers="false" rotate="false"></ul>
+
+        </div>
+    </div>
+</div>
+<style>
+    .container {
+        max-width: inherit;
+    }
+</style>

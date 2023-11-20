@@ -1,0 +1,1086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AporteAudiovisual">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Director" Type="nvarchar" MaxLength="60" />
+    <Property Name="Genero" Type="nvarchar" MaxLength="25" />
+    <Property Name="Clase" Type="nvarchar" MaxLength="25" />
+    <Property Name="Metraje" Type="nvarchar" MaxLength="25" />
+    <Property Name="Duracion" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="AudiovisualAutores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Autores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="EstadoCivil" Type="nvarchar" MaxLength="1" />
+    <Property Name="Profesion" Type="nvarchar" MaxLength="25" />
+    <Property Name="Domicilio" Type="nvarchar" MaxLength="60" />
+    <Property Name="Nacionalidad" Type="nvarchar" MaxLength="25" />
+    <Property Name="Identificacion" Type="nvarchar" MaxLength="50" />
+    <Property Name="LugarNotificacion" Type="nvarchar" MaxLength="60" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="80" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="FechaDef" Type="date" />
+    <Property Name="DatosBibliograficos" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ComposicionAutores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DAResoluciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Articulos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Omitio" Type="nvarchar" MaxLength="250" />
+    <Property Name="Referente" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="DerechoDeAutor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Traduccion" Type="nvarchar(max)" />
+    <Property Name="Paginas" Type="int" />
+    <Property Name="Formato" Type="nvarchar" MaxLength="25" />
+    <Property Name="LugarEdicion" Type="nvarchar" MaxLength="60" />
+    <Property Name="FechaEdicion" Type="date" />
+    <Property Name="LugarEraPublicacion" Type="nvarchar" MaxLength="60" />
+    <Property Name="FechaPublicacion" Type="date" />
+    <Property Name="Editor" Type="nvarchar" MaxLength="60" />
+    <Property Name="AnioCreacion" Type="nvarchar" MaxLength="4" />
+    <Property Name="PaisOrigenId" Type="int" />
+    <Property Name="EsInedita" Type="bit" />
+    <Property Name="EsPublicada" Type="bit" />
+    <Property Name="EsOriginaria" Type="bit" />
+    <Property Name="EsDerivada" Type="bit" />
+    <Property Name="EsIndividual" Type="bit" />
+    <Property Name="EsColectiva" Type="bit" />
+    <Property Name="EsEnColaboracion" Type="bit" />
+    <Property Name="OtraClasificacionAplicable" Type="nvarchar(max)" />
+    <Property Name="VersionesAutorizadas" Type="nvarchar" MaxLength="40" />
+    <Property Name="OtraInfoQueIdentifique" Type="nvarchar(max)" />
+    <Property Name="SoporteMaterial" Type="nvarchar" MaxLength="250" />
+    <Property Name="Registro" Type="int" />
+    <Property Name="Libro" Type="nvarchar" MaxLength="25" />
+    <Property Name="Tomo" Type="int" Nullable="false" />
+    <Property Name="Folio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FonogramaArtistas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="NombreArtista" Type="nvarchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FonogramaTituloDeObras">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TituloObra" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Formularios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDeRegistroId" Type="int" Nullable="false" />
+    <Property Name="Considerando" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GuionAutores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="NombreAutor" Type="nvarchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LiterariasyArtisticas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="NombreDelEditor" Type="nvarchar" MaxLength="60" />
+    <Property Name="DireccionEditor" Type="nvarchar" MaxLength="60" />
+    <Property Name="NombreImprenta" Type="nvarchar" MaxLength="60" />
+    <Property Name="DireccionImprenta" Type="nvarchar" MaxLength="60" />
+    <Property Name="Edicion" Type="nvarchar" MaxLength="10" />
+    <Property Name="Tamano" Type="nvarchar" MaxLength="25" />
+    <Property Name="Clasificacion" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="ObrasMusicalesyEscenicas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Partitura" Type="nchar" MaxLength="1" />
+    <Property Name="Letra" Type="nchar" MaxLength="1" />
+    <Property Name="Genero" Type="nvarchar" MaxLength="25" />
+    <Property Name="EsAutor" Type="bit" />
+    <Property Name="EsMusica" Type="bit" />
+    <Property Name="EsComercial" Type="bit" />
+    <Property Name="ClaseGenero" Type="nvarchar" MaxLength="25" />
+    <Property Name="Duracion" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Productores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="80" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="EstadoCivil" Type="nchar" MaxLength="1" />
+    <Property Name="Profesion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nacionalidad" Type="nvarchar" MaxLength="25" />
+    <Property Name="Domicilio" Type="nvarchar" MaxLength="80" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="10" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="Solicitantes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="200" />
+    <Property Name="Edad" Type="int" />
+    <Property Name="EstadoCivil" Type="nchar" MaxLength="1" />
+    <Property Name="Profesion" Type="nvarchar" MaxLength="25" />
+    <Property Name="Domicilio" Type="nvarchar" MaxLength="60" />
+    <Property Name="Nacionalidad" Type="nvarchar" MaxLength="25" />
+    <Property Name="LugarNotificacion" Type="nvarchar" MaxLength="60" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="80" />
+    <Property Name="Calidad" Type="nvarchar" MaxLength="150" />
+    <Property Name="EntidadSolicitante" Type="nvarchar" MaxLength="200" />
+    <Property Name="LugarConstitucion" Type="nvarchar" MaxLength="50" />
+    <Property Name="ObjetoSolicitud" Type="nvarchar" MaxLength="60" />
+    <Property Name="EnCalidad" Type="nchar" MaxLength="1" />
+    <Property Name="AdquirioDerecho" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Templates">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstatusId" Type="int" Nullable="false" />
+    <Property Name="Contenido" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AnotacionEnExpedientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TipoDeAnotacionId" Type="int" />
+    <Property Name="EnExpedienteId" Type="int" Nullable="false" />
+    <Property Name="EnRegistro" Type="int" Nullable="false" />
+    <Property Name="Raya" Type="nchar" MaxLength="1" />
+    <Property Name="EstatusId" Type="int" Nullable="false" />
+    <Property Name="ActualizadoPorUsuarioId" Type="int" />
+    <Property Name="FechaActualizacion" Type="datetime" />
+    <Property Name="AgenteId" Type="int" />
+    <Property Name="TipoDeRegistroId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Anotaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TitularId" Type="int" />
+    <Property Name="NuevoTitular" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="200" />
+    <Property Name="PaisId" Type="int" />
+  </EntityType>
+  <EntityType Name="Bitacora">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="METADATA" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaDeCambio" Type="datetime" Nullable="false" />
+    <Property Name="CambioPorUsuarioId" Type="int" Nullable="false" />
+    <Property Name="Razon" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClasificacionDeViena">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClassificacionDeNiza">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ProductosQueAmpara" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Correlativos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="TipoDeRegistroId" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cronologia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="EstatusId" Type="int" />
+    <Property Name="Referencia" Type="nvarchar" MaxLength="20" />
+    <Property Name="UsuarioId" Type="int" />
+    <Property Name="Observaciones" Type="nvarchar(max)" />
+    <Property Name="UsuarioIniciales" Type="nvarchar" MaxLength="50" />
+    <Property Name="JSONDOC" Type="nvarchar(max)" />
+    <Property Name="HTMLDOC" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CronologiaDoctos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CronologiaId" Type="int" Nullable="false" />
+    <Property Name="Llave" Type="uniqueidentifier" />
+    <Property Name="JSONDOC" Type="nvarchar(max)" />
+    <Property Name="HTMLDOC" Type="nvarchar(max)" />
+    <Property Name="FechaActualizacion" Type="datetime" Nullable="false" />
+    <Property Name="ActualizadoPorUsuarioId" Type="int" Nullable="false" />
+    <Property Name="EsTitulo" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ModuloId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Expedientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuloId" Type="int" Nullable="false" />
+    <Property Name="TipoDeRegistroId" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FechaDeSolicitud" Type="date" Nullable="false" />
+    <Property Name="Hora" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EstatusId" Type="int" Nullable="false" />
+    <Property Name="FechaDeEstatus" Type="datetime" Nullable="false" />
+    <Property Name="LeyId" Type="int" Nullable="false" />
+    <Property Name="UbicacionId" Type="int" />
+    <Property Name="UbicacionUsuarioId" Type="int" />
+    <Property Name="FechaTraslado" Type="date" />
+    <Property Name="ActualizadoPorUsuarioId" Type="int" />
+    <Property Name="FechaActualizacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Gaceta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" />
+    <Property Name="TipoDeRegistroId" Type="int" />
+    <Property Name="Numero" Type="nvarchar" MaxLength="20" />
+    <Property Name="GacetaSeccionId" Type="int" Nullable="false" />
+    <Property Name="FechaPublicacion" Type="datetime" Nullable="false" />
+    <Property Name="JSONDOC" Type="nvarchar(max)" />
+    <Property Name="enabled" Type="bit" />
+    <Property Name="HTMLDOC" Type="nvarchar(max)" />
+    <Property Name="FechaEdicto" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GacetaSecciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModuloId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Leyes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ley" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogosMarcas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Logo" Type="image" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoteExpedientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoteId" Type="int" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Acceptado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lotes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Motivo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="EntregaUsuarioId" Type="int" Nullable="false" />
+    <Property Name="RecibeUsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MandatarioDeLaMarca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="MandatarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mandatarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Profesion" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaisId" Type="int" />
+    <Property Name="Domicilio" Type="nvarchar" MaxLength="200" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cargo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Marcas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Recibo" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoDeMarca" Type="int" Nullable="false" />
+    <Property Name="Denominacion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Traduccion" Type="nvarchar" MaxLength="200" />
+    <Property Name="Industrial" Type="bit" Nullable="false" />
+    <Property Name="DeServicios" Type="bit" Nullable="false" />
+    <Property Name="Comercial" Type="bit" Nullable="false" />
+    <Property Name="Certificacion" Type="bit" Nullable="false" />
+    <Property Name="Colectiva" Type="bit" Nullable="false" />
+    <Property Name="Registro" Type="int" />
+    <Property Name="Raya" Type="nvarchar" MaxLength="1" />
+    <Property Name="Tomo" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="Folio" Type="numeric" Precision="10" Scale="0" />
+    <Property Name="ClassificacionDeNizaId" Type="int" />
+    <Property Name="Productos" Type="nvarchar(max)" />
+    <Property Name="Reservas" Type="nvarchar(max)" />
+    <Property Name="DescripcionGrafica" Type="nvarchar(max)" />
+    <Property Name="DoctosAdjuntos" Type="nvarchar" MaxLength="20" />
+    <Property Name="OtrosDoctosAdjuntos" Type="nvarchar" MaxLength="50" />
+    <Property Name="CaracteristicasCom" Type="nvarchar(max)" />
+    <Property Name="EstandaresDeCalidad" Type="nvarchar(max)" />
+    <Property Name="AutoridadApReglamento" Type="nvarchar" MaxLength="100" />
+    <Property Name="DireccionComercializacion" Type="nvarchar" MaxLength="200" />
+    <Property Name="UltimaRenovacion" Type="nvarchar" MaxLength="4" />
+    <Property Name="ExtensionDeLaMarca" Type="nchar" MaxLength="1" />
+    <Property Name="PaisConstituidaId" Type="int" />
+    <Property Name="UbicacionActual" Type="nvarchar" MaxLength="25" />
+    <Property Name="UbicacionAnterior" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaDeTraslado" Type="datetime" />
+    <Property Name="MotivoDeTraslado" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nacionalidad" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrioridadMarcas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="nvarchar" MaxLength="35" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Productividad">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Tiempo" Type="int" Nullable="false" />
+    <Property Name="TrabajoRealizado" Type="nvarchar(max)" />
+    <Property Name="Updateevery30secs" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ProductosMarcas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="ClasificacionDeNizaId" Type="int" Nullable="false" />
+    <Property Name="Productos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Reservas" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Publicaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="expediente" Type="nvarchar" MaxLength="9" />
+    <Property Name="fecha_edicto" Type="datetime" />
+    <Property Name="fecha_publicacion" Type="datetime" />
+    <Property Name="distintivo" Type="nvarchar" MaxLength="200" />
+    <Property Name="titular" Type="nvarchar" MaxLength="200" />
+    <Property Name="clase" Type="nvarchar" MaxLength="2" />
+    <Property Name="mandatario" Type="nvarchar" MaxLength="100" />
+    <Property Name="fecha_solicitud" Type="datetime" />
+    <Property Name="calidad" Type="nvarchar" MaxLength="100" />
+    <Property Name="pais" Type="nvarchar" MaxLength="50" />
+    <Property Name="productos" Type="nvarchar(max)" />
+    <Property Name="firmado_por" Type="nvarchar" MaxLength="150" />
+    <Property Name="logotipo" Type="nvarchar" MaxLength="100" />
+    <Property Name="archivo" Type="nvarchar" MaxLength="100" />
+    <Property Name="tipo_edicto" Type="int" />
+    <Property Name="dir_comercial" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Renovaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="RenovacionExpedienteId" Type="int" Nullable="false" />
+    <Property Name="RenovacionRegistro" Type="int" Nullable="false" />
+    <Property Name="Raya" Type="nchar" MaxLength="1" />
+    <Property Name="EstatusId" Type="int" Nullable="false" />
+    <Property Name="ActualizadoPorUsuarioId" Type="int" Nullable="false" />
+    <Property Name="FechaActualizacion" Type="datetime" Nullable="false" />
+    <Property Name="AgenteId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sequence">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KeyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NextValue" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TiposDeMarca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Flag" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TiposDeRegistro">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="codigo" Type="nchar" MaxLength="2" />
+    <Property Name="ModuloId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Titulares">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="OldId" Type="int" />
+  </EntityType>
+  <EntityType Name="TitularesDeLaMarca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TitularId" Type="int" Nullable="false" />
+    <Property Name="DireccionParaNotificacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DireccionParaUbicacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EnCalidadDe" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ubicaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ubicacion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuariosPublicos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cuenta" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Pwd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Empresa" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ciudad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstadoProvincia" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telefonos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="Suscripcion" Type="bit" />
+    <Property Name="Spk" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpkExpiration" Type="datetime" />
+    <Property Name="FechaSuscripcion" Type="datetime" />
+    <Property Name="FechaCaducidad" Type="datetime" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="VienaMarcas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="ClassificacionDeVienaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Avisos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Subtitulo" Type="nvarchar" MaxLength="150" />
+    <Property Name="Contenido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PublicadoPor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ActualizadoPorUsuarioId" Type="int" />
+    <Property Name="FechaActualizacion" Type="datetime" />
+    <Property Name="enabled" Type="bit" />
+  </EntityType>
+  <EntityType Name="Favoritos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="Notas" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="GrupoExpedientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GrupoId" Type="int" Nullable="false" />
+    <Property Name="FavoritoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrupoMiembros">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GrupoId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Grupos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OwnerId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Areas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Auditoria">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="Evento" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Historial" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="Opcion" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="Acceso" Type="bit" Nullable="false" />
+    <Property Name="OtorgadoPorUsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Enum" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="Token" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TokenExp" Type="datetime" Nullable="false" />
+    <Property Name="FootMark" Type="int" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="RolId" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Salt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Spk" Type="nvarchar" MaxLength="50" />
+    <Property Name="SpkExpiration" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Abandonos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TipoResolucion" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Opciones" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Fecha1" Type="date" Nullable="false" />
+    <Property Name="Fecha2" Type="date" Nullable="false" />
+    <Property Name="Fecha3" Type="date" Nullable="false" />
+    <Property Name="Fecha4" Type="date" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Agentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Domicilio" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+    <Property Name="tmpId" Type="int" />
+  </EntityType>
+  <EntityType Name="Anualidades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="NumeroAnualidad" Type="int" Nullable="false" />
+    <Property Name="EsRenovacion" Type="bit" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="date" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="Recibo" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="FechaRecibo" Type="date" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="FechaAnualidad" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clasificaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tmpId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Inventores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Ciudad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IPC">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Indice" Type="int" Nullable="false" />
+    <Property Name="Classificacion" Type="nvarchar" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Registro" Type="int" />
+    <Property Name="AgenteId" Type="int" />
+    <Property Name="anualidades" Type="int" />
+    <Property Name="Folio" Type="int" />
+    <Property Name="Tomo" Type="int" />
+    <Property Name="Resumen" Type="nvarchar(max)" />
+    <Property Name="ClasificacionId" Type="int" />
+    <Property Name="RecibidoPorUsuarioId" Type="int" />
+    <Property Name="FechaRecepcion" Type="date" />
+    <Property Name="Pct" Type="nvarchar" MaxLength="15" />
+    <Property Name="Fecha_Pct" Type="date" />
+    <Property Name="Citaciones" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Prioridades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Tipo_referencia" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="SolicitudP" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resoluciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TipoResolucion" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Opciones" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Otros" Type="nvarchar(max)" />
+    <Property Name="FechaNotificacion" Type="date" />
+    <Property Name="FechaPublicacion" Type="date" />
+    <Property Name="Hora" Type="nvarchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="TitularesDeLaPatente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TitularId" Type="int" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TitularesEnPatentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="tmpId" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Titulos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExpedienteId" Type="int" Nullable="false" />
+    <Property Name="TipoResolucion" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Observaciones" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaAnotaciones" Type="date" Nullable="false" />
+    <Property Name="FechaConsecion" Type="date" Nullable="false" />
+    <Property Name="Plazo" Type="int" Nullable="false" />
+    <Property Name="Clasificacion" Type="int" Nullable="false" />
+    <Property Name="Flag" Type="int" Nullable="false" />
+    <Property Name="TipoDeAcuerdoId" Type="int" />
+    <Property Name="Acuerdo" Type="nvarchar" MaxLength="10" />
+    <Property Name="FechaAcuerdo" Type="date" />
+  </EntityType>
+  <Association Name="FK_Anotaciones_Expedientes">
+    <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+    <End Role="AnotacionEnExpedientes" Type="Self.AnotacionEnExpedientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expedientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AnotacionEnExpedientes">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bitacora_Expedientes">
+    <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+    <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expedientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bitacora">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cronologia_Expedientes">
+    <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+    <End Role="Cronologia" Type="Self.Cronologia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expedientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cronologia">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogosMarcas_Marcas">
+    <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+    <End Role="LogosMarcas" Type="Self.LogosMarcas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marcas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LogosMarcas">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marcas_ClassificacionDeNiza">
+    <End Role="ClassificacionDeNiza" Type="Self.ClassificacionDeNiza" Multiplicity="0..1" />
+    <End Role="Marcas" Type="Self.Marcas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClassificacionDeNiza">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Marcas">
+        <PropertyRef Name="ClassificacionDeNizaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Marcas_Expedientes">
+    <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+    <End Role="Marcas" Type="Self.Marcas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expedientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Marcas">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductosMarcas_Marcas">
+    <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+    <End Role="ProductosMarcas" Type="Self.ProductosMarcas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marcas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductosMarcas">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Renovaciones_Expedientes">
+    <End Role="Expedientes" Type="Self.Expedientes" Multiplicity="1" />
+    <End Role="Renovaciones" Type="Self.Renovaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expedientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Renovaciones">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VienaMarcas_Marcas">
+    <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+    <End Role="VienaMarcas" Type="Self.VienaMarcas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marcas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VienaMarcas">
+        <PropertyRef Name="ExpedienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GPIModelStoreContainer">
+    <EntitySet Name="AporteAudiovisual" EntityType="Self.AporteAudiovisual" Schema="da" store:Type="Tables" />
+    <EntitySet Name="AudiovisualAutores" EntityType="Self.AudiovisualAutores" Schema="da" store:Type="Tables" />
+    <EntitySet Name="Autores" EntityType="Self.Autores" Schema="da" store:Type="Tables" />
+    <EntitySet Name="ComposicionAutores" EntityType="Self.ComposicionAutores" Schema="da" store:Type="Tables" />
+    <EntitySet Name="DAResoluciones" EntityType="Self.DAResoluciones" Schema="da" store:Type="Tables" />
+    <EntitySet Name="DerechoDeAutor" EntityType="Self.DerechoDeAutor" Schema="da" store:Type="Tables" />
+    <EntitySet Name="FonogramaArtistas" EntityType="Self.FonogramaArtistas" Schema="da" store:Type="Tables" />
+    <EntitySet Name="FonogramaTituloDeObras" EntityType="Self.FonogramaTituloDeObras" Schema="da" store:Type="Tables" />
+    <EntitySet Name="Formularios" EntityType="Self.Formularios" Schema="da" store:Type="Tables" />
+    <EntitySet Name="GuionAutores" EntityType="Self.GuionAutores" Schema="da" store:Type="Tables" />
+    <EntitySet Name="LiterariasyArtisticas" EntityType="Self.LiterariasyArtisticas" Schema="da" store:Type="Tables" />
+    <EntitySet Name="ObrasMusicalesyEscenicas" EntityType="Self.ObrasMusicalesyEscenicas" Schema="da" store:Type="Tables" />
+    <EntitySet Name="Productores" EntityType="Self.Productores" Schema="da" store:Type="Tables" />
+    <EntitySet Name="Solicitantes" EntityType="Self.Solicitantes" Schema="da" store:Type="Tables" />
+    <EntitySet Name="Templates" EntityType="Self.Templates" Schema="da" store:Type="Tables" />
+    <EntitySet Name="AnotacionEnExpedientes" EntityType="Self.AnotacionEnExpedientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anotaciones" EntityType="Self.Anotaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClasificacionDeViena" EntityType="Self.ClasificacionDeViena" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClassificacionDeNiza" EntityType="Self.ClassificacionDeNiza" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Correlativos" EntityType="Self.Correlativos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cronologia" EntityType="Self.Cronologia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CronologiaDoctos" EntityType="Self.CronologiaDoctos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estatus" EntityType="Self.Estatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Expedientes" EntityType="Self.Expedientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gaceta" EntityType="Self.Gaceta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GacetaSecciones" EntityType="Self.GacetaSecciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Leyes" EntityType="Self.Leyes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogosMarcas" EntityType="Self.LogosMarcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoteExpedientes" EntityType="Self.LoteExpedientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lotes" EntityType="Self.Lotes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MandatarioDeLaMarca" EntityType="Self.MandatarioDeLaMarca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mandatarios" EntityType="Self.Mandatarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marcas" EntityType="Self.Marcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrioridadMarcas" EntityType="Self.PrioridadMarcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productividad" EntityType="Self.Productividad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductosMarcas" EntityType="Self.ProductosMarcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publicaciones" EntityType="Self.Publicaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Renovaciones" EntityType="Self.Renovaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sequence" EntityType="Self.Sequence" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TiposDeMarca" EntityType="Self.TiposDeMarca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TiposDeRegistro" EntityType="Self.TiposDeRegistro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Titulares" EntityType="Self.Titulares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TitularesDeLaMarca" EntityType="Self.TitularesDeLaMarca" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ubicaciones" EntityType="Self.Ubicaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuariosPublicos" EntityType="Self.UsuariosPublicos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VienaMarcas" EntityType="Self.VienaMarcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Avisos" EntityType="Self.Avisos" Schema="externo" store:Type="Tables" />
+    <EntitySet Name="Favoritos" EntityType="Self.Favoritos" Schema="ip_external" store:Type="Tables" />
+    <EntitySet Name="GrupoExpedientes" EntityType="Self.GrupoExpedientes" Schema="ip_external" store:Type="Tables" />
+    <EntitySet Name="GrupoMiembros" EntityType="Self.GrupoMiembros" Schema="ip_external" store:Type="Tables" />
+    <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="ip_external" store:Type="Tables" />
+    <EntitySet Name="Areas" EntityType="Self.Areas" Schema="ip_internal" store:Type="Tables" />
+    <EntitySet Name="Auditoria" EntityType="Self.Auditoria" Schema="ip_internal" store:Type="Tables" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="ip_internal" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="ip_internal" store:Type="Tables" />
+    <EntitySet Name="Session" EntityType="Self.Session" Schema="ip_internal" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="ip_internal" store:Type="Tables" />
+    <EntitySet Name="Abandonos" EntityType="Self.Abandonos" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Agentes" EntityType="Self.Agentes" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Anualidades" EntityType="Self.Anualidades" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Clasificaciones" EntityType="Self.Clasificaciones" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Inventores" EntityType="Self.Inventores" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="IPC" EntityType="Self.IPC" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Patentes" EntityType="Self.Patentes" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Prioridades" EntityType="Self.Prioridades" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Resoluciones" EntityType="Self.Resoluciones" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="TitularesDeLaPatente" EntityType="Self.TitularesDeLaPatente" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="TitularesEnPatentes" EntityType="Self.TitularesEnPatentes" Schema="patentes" store:Type="Tables" />
+    <EntitySet Name="Titulos" EntityType="Self.Titulos" Schema="patentes" store:Type="Tables" />
+    <AssociationSet Name="FK_Anotaciones_Expedientes" Association="Self.FK_Anotaciones_Expedientes">
+      <End Role="Expedientes" EntitySet="Expedientes" />
+      <End Role="AnotacionEnExpedientes" EntitySet="AnotacionEnExpedientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bitacora_Expedientes" Association="Self.FK_Bitacora_Expedientes">
+      <End Role="Expedientes" EntitySet="Expedientes" />
+      <End Role="Bitacora" EntitySet="Bitacora" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cronologia_Expedientes" Association="Self.FK_Cronologia_Expedientes">
+      <End Role="Expedientes" EntitySet="Expedientes" />
+      <End Role="Cronologia" EntitySet="Cronologia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogosMarcas_Marcas" Association="Self.FK_LogosMarcas_Marcas">
+      <End Role="Marcas" EntitySet="Marcas" />
+      <End Role="LogosMarcas" EntitySet="LogosMarcas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marcas_ClassificacionDeNiza" Association="Self.FK_Marcas_ClassificacionDeNiza">
+      <End Role="ClassificacionDeNiza" EntitySet="ClassificacionDeNiza" />
+      <End Role="Marcas" EntitySet="Marcas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Marcas_Expedientes" Association="Self.FK_Marcas_Expedientes">
+      <End Role="Expedientes" EntitySet="Expedientes" />
+      <End Role="Marcas" EntitySet="Marcas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductosMarcas_Marcas" Association="Self.FK_ProductosMarcas_Marcas">
+      <End Role="Marcas" EntitySet="Marcas" />
+      <End Role="ProductosMarcas" EntitySet="ProductosMarcas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Renovaciones_Expedientes" Association="Self.FK_Renovaciones_Expedientes">
+      <End Role="Expedientes" EntitySet="Expedientes" />
+      <End Role="Renovaciones" EntitySet="Renovaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VienaMarcas_Marcas" Association="Self.FK_VienaMarcas_Marcas">
+      <End Role="Marcas" EntitySet="Marcas" />
+      <End Role="VienaMarcas" EntitySet="VienaMarcas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

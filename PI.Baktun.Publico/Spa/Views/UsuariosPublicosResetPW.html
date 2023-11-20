@@ -1,0 +1,58 @@
+﻿
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Mi Perfil</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="bs-box bs-box-green bs-box-none row" ng-show="usuario.Id">
+                <form class="simple-form" name='form' novalidate>
+                    <input ng-hide="usuario.Id" ng-model="usuario.Id" />
+                    <input ng-hide="usuario.Spk" ng-model="usuario.Spk" />
+
+                    <div class="form-group">
+                        <label>Cuenta</label>
+                        <input type="email" placeholder="email" class="form-control" name="Cuenta" ng-model="usuario.Cuenta" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Nombre de la cuenta" class="form-control" name="Nombre" ng-model="usuario.Nombre" disabled>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Password</label>
+                                </div>
+                                <div class="col-md-4" ng-class="{'has-error': form.Pwd.$error.required || form.Pwd.$error.equals}">
+                                    <input type="Password" name="Pwd" ng-model="usuario.Pwd" equals="{{usuario.confirm_password}}" class="form-control" required />
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Reenter Password</label>
+                                </div>
+                                <div class="col-md-4" ng-class="{'has-error': form.confirm_password.$error.required || form.confirm_password.$error.equals}">
+                                    <input type="password" name="confirm_password" ng-model="usuario.confirm_password" equals="{{usuario.Pwd}}" class="form-control" required />
+                                    <div ng-show="form.confirm_password.$error.equals">La contraseña no coincide</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-2">
+                            <a href="/Publico/#/usuario" class=" btn btn-default">Close</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary" ng-click="setPW(usuario)" ng-disabled="form.$invalid || isUnchanged(usuario)">Grabar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

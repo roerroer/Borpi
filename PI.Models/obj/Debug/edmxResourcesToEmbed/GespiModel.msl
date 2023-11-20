@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GPIModelStoreContainer" CdmEntityContainer="GPIEntities">
+    <EntitySetMapping Name="Titulares">
+      <EntityTypeMapping TypeName="GPIModel.Titular">
+        <MappingFragment StoreEntitySet="Titulares">
+          <ScalarProperty Name="OldId" ColumnName="OldId" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bitacora">
+      <EntityTypeMapping TypeName="GPIModel.Bitacora">
+        <MappingFragment StoreEntitySet="Bitacora">
+          <ScalarProperty Name="Razon" ColumnName="Razon" />
+          <ScalarProperty Name="CambioPorUsuarioId" ColumnName="CambioPorUsuarioId" />
+          <ScalarProperty Name="FechaDeCambio" ColumnName="FechaDeCambio" />
+          <ScalarProperty Name="METADATA" ColumnName="METADATA" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClasificacionDeViena">
+      <EntityTypeMapping TypeName="GPIModel.ClasificacionDeViena">
+        <MappingFragment StoreEntitySet="ClasificacionDeViena">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClassificacionDeNiza">
+      <EntityTypeMapping TypeName="GPIModel.ClassificacionDeNiza">
+        <MappingFragment StoreEntitySet="ClassificacionDeNiza">
+          <ScalarProperty Name="ProductosQueAmpara" ColumnName="ProductosQueAmpara" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Correlativos">
+      <EntityTypeMapping TypeName="GPIModel.Correlativos">
+        <MappingFragment StoreEntitySet="Correlativos">
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cronologia">
+      <EntityTypeMapping TypeName="GPIModel.Cronologia">
+        <MappingFragment StoreEntitySet="Cronologia">
+          <ScalarProperty Name="HTMLDOC" ColumnName="HTMLDOC" />
+          <ScalarProperty Name="JSONDOC" ColumnName="JSONDOC" />
+          <ScalarProperty Name="UsuarioIniciales" ColumnName="UsuarioIniciales" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+          <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estatus">
+      <EntityTypeMapping TypeName="GPIModel.Estatus">
+        <MappingFragment StoreEntitySet="Estatus">
+          <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leyes">
+      <EntityTypeMapping TypeName="GPIModel.Leyes">
+        <MappingFragment StoreEntitySet="Leyes">
+          <ScalarProperty Name="Ley" ColumnName="Ley" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogosMarcas">
+      <EntityTypeMapping TypeName="GPIModel.LogosMarcas">
+        <MappingFragment StoreEntitySet="LogosMarcas">
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoteExpedientes">
+      <EntityTypeMapping TypeName="GPIModel.LoteExpedientes">
+        <MappingFragment StoreEntitySet="LoteExpedientes">
+          <ScalarProperty Name="Acceptado" ColumnName="Acceptado" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="LoteId" ColumnName="LoteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lotes">
+      <EntityTypeMapping TypeName="GPIModel.Lote">
+        <MappingFragment StoreEntitySet="Lotes">
+          <ScalarProperty Name="RecibeUsuarioId" ColumnName="RecibeUsuarioId" />
+          <ScalarProperty Name="EntregaUsuarioId" ColumnName="EntregaUsuarioId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mandatarios">
+      <EntityTypeMapping TypeName="GPIModel.Mandatarios">
+        <MappingFragment StoreEntitySet="Mandatarios">
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marcas">
+      <EntityTypeMapping TypeName="GPIModel.Marca">
+        <MappingFragment StoreEntitySet="Marcas">
+          <ScalarProperty Name="MotivoDeTraslado" ColumnName="MotivoDeTraslado" />
+          <ScalarProperty Name="FechaDeTraslado" ColumnName="FechaDeTraslado" />
+          <ScalarProperty Name="UbicacionAnterior" ColumnName="UbicacionAnterior" />
+          <ScalarProperty Name="UbicacionActual" ColumnName="UbicacionActual" />
+          <ScalarProperty Name="PaisConstituidaId" ColumnName="PaisConstituidaId" />
+          <ScalarProperty Name="ExtensionDeLaMarca" ColumnName="ExtensionDeLaMarca" />
+          <ScalarProperty Name="UltimaRenovacion" ColumnName="UltimaRenovacion" />
+          <ScalarProperty Name="DireccionComercializacion" ColumnName="DireccionComercializacion" />
+          <ScalarProperty Name="AutoridadApReglamento" ColumnName="AutoridadApReglamento" />
+          <ScalarProperty Name="EstandaresDeCalidad" ColumnName="EstandaresDeCalidad" />
+          <ScalarProperty Name="CaracteristicasCom" ColumnName="CaracteristicasCom" />
+          <ScalarProperty Name="OtrosDoctosAdjuntos" ColumnName="OtrosDoctosAdjuntos" />
+          <ScalarProperty Name="DoctosAdjuntos" ColumnName="DoctosAdjuntos" />
+          <ScalarProperty Name="DescripcionGrafica" ColumnName="DescripcionGrafica" />
+          <ScalarProperty Name="Reservas" ColumnName="Reservas" />
+          <ScalarProperty Name="Productos" ColumnName="Productos" />
+          <ScalarProperty Name="ClassificacionDeNizaId" ColumnName="ClassificacionDeNizaId" />
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="Tomo" ColumnName="Tomo" />
+          <ScalarProperty Name="Raya" ColumnName="Raya" />
+          <ScalarProperty Name="Registro" ColumnName="Registro" />
+          <ScalarProperty Name="Colectiva" ColumnName="Colectiva" />
+          <ScalarProperty Name="Certificacion" ColumnName="Certificacion" />
+          <ScalarProperty Name="Comercial" ColumnName="Comercial" />
+          <ScalarProperty Name="DeServicios" ColumnName="DeServicios" />
+          <ScalarProperty Name="Industrial" ColumnName="Industrial" />
+          <ScalarProperty Name="Traduccion" ColumnName="Traduccion" />
+          <ScalarProperty Name="Denominacion" ColumnName="Denominacion" />
+          <ScalarProperty Name="TipoDeMarca" ColumnName="TipoDeMarca" />
+          <ScalarProperty Name="Recibo" ColumnName="Recibo" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modulos">
+      <EntityTypeMapping TypeName="GPIModel.Modulo">
+        <MappingFragment StoreEntitySet="Modulos">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paises">
+      <EntityTypeMapping TypeName="GPIModel.Pais">
+        <MappingFragment StoreEntitySet="Paises">
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrioridadMarcas">
+      <EntityTypeMapping TypeName="GPIModel.PrioridadMarca">
+        <MappingFragment StoreEntitySet="PrioridadMarcas">
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productividad">
+      <EntityTypeMapping TypeName="GPIModel.Productividad">
+        <MappingFragment StoreEntitySet="Productividad">
+          <ScalarProperty Name="Updateevery30secs" ColumnName="Updateevery30secs" />
+          <ScalarProperty Name="TrabajoRealizado" ColumnName="TrabajoRealizado" />
+          <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductosMarcas">
+      <EntityTypeMapping TypeName="GPIModel.ProductosMarca">
+        <MappingFragment StoreEntitySet="ProductosMarcas">
+          <ScalarProperty Name="Reservas" ColumnName="Reservas" />
+          <ScalarProperty Name="Productos" ColumnName="Productos" />
+          <ScalarProperty Name="ClasificacionDeNizaId" ColumnName="ClasificacionDeNizaId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposDeMarca">
+      <EntityTypeMapping TypeName="GPIModel.TiposDeMarca">
+        <MappingFragment StoreEntitySet="TiposDeMarca">
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposDeRegistro">
+      <EntityTypeMapping TypeName="GPIModel.TiposDeRegistro">
+        <MappingFragment StoreEntitySet="TiposDeRegistro">
+          <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ubicaciones">
+      <EntityTypeMapping TypeName="GPIModel.Ubicaciones">
+        <MappingFragment StoreEntitySet="Ubicaciones">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VienaMarcas">
+      <EntityTypeMapping TypeName="GPIModel.VienaMarcas">
+        <MappingFragment StoreEntitySet="VienaMarcas">
+          <ScalarProperty Name="ClassificacionDeVienaId" ColumnName="ClassificacionDeVienaId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AudiovisualAutores">
+      <EntityTypeMapping TypeName="GPIModel.AudiovisualAutor">
+        <MappingFragment StoreEntitySet="AudiovisualAutores">
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComposicionAutores">
+      <EntityTypeMapping TypeName="GPIModel.ComposicionAutor">
+        <MappingFragment StoreEntitySet="ComposicionAutores">
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DAResoluciones">
+      <EntityTypeMapping TypeName="GPIModel.DAResolucion">
+        <MappingFragment StoreEntitySet="DAResoluciones">
+          <ScalarProperty Name="Referente" ColumnName="Referente" />
+          <ScalarProperty Name="Omitio" ColumnName="Omitio" />
+          <ScalarProperty Name="Articulos" ColumnName="Articulos" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FonogramaArtistas">
+      <EntityTypeMapping TypeName="GPIModel.FonogramaArtista">
+        <MappingFragment StoreEntitySet="FonogramaArtistas">
+          <ScalarProperty Name="NombreArtista" ColumnName="NombreArtista" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Formularios">
+      <EntityTypeMapping TypeName="GPIModel.Formularios">
+        <MappingFragment StoreEntitySet="Formularios">
+          <ScalarProperty Name="Considerando" ColumnName="Considerando" />
+          <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuionAutores">
+      <EntityTypeMapping TypeName="GPIModel.GuionAutor">
+        <MappingFragment StoreEntitySet="GuionAutores">
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Templates">
+      <EntityTypeMapping TypeName="GPIModel.Templates">
+        <MappingFragment StoreEntitySet="Templates">
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Abandonos">
+      <EntityTypeMapping TypeName="GPIModel.Abandonos">
+        <MappingFragment StoreEntitySet="Abandonos">
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Fecha4" ColumnName="Fecha4" />
+          <ScalarProperty Name="Fecha3" ColumnName="Fecha3" />
+          <ScalarProperty Name="Fecha2" ColumnName="Fecha2" />
+          <ScalarProperty Name="Fecha1" ColumnName="Fecha1" />
+          <ScalarProperty Name="Opciones" ColumnName="Opciones" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="TipoResolucion" ColumnName="TipoResolucion" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Agentes">
+      <EntityTypeMapping TypeName="GPIModel.Agente">
+        <MappingFragment StoreEntitySet="Agentes">
+          <ScalarProperty Name="tmpId" ColumnName="tmpId" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clasificaciones">
+      <EntityTypeMapping TypeName="GPIModel.Clasificacion">
+        <MappingFragment StoreEntitySet="Clasificaciones">
+          <ScalarProperty Name="tmpId" ColumnName="tmpId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventores">
+      <EntityTypeMapping TypeName="GPIModel.Inventor">
+        <MappingFragment StoreEntitySet="Inventores">
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IPC">
+      <EntityTypeMapping TypeName="GPIModel.IPC">
+        <MappingFragment StoreEntitySet="IPC">
+          <ScalarProperty Name="Classificacion" ColumnName="Classificacion" />
+          <ScalarProperty Name="Indice" ColumnName="Indice" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prioridades">
+      <EntityTypeMapping TypeName="GPIModel.Prioridad">
+        <MappingFragment StoreEntitySet="Prioridades">
+          <ScalarProperty Name="SolicitudP" ColumnName="SolicitudP" />
+          <ScalarProperty Name="Tipo_referencia" ColumnName="Tipo_referencia" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resoluciones">
+      <EntityTypeMapping TypeName="GPIModel.Resolucion">
+        <MappingFragment StoreEntitySet="Resoluciones">
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="FechaNotificacion" ColumnName="FechaNotificacion" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Opciones" ColumnName="Opciones" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="TipoResolucion" ColumnName="TipoResolucion" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titulos">
+      <EntityTypeMapping TypeName="GPIModel.Titulos">
+        <MappingFragment StoreEntitySet="Titulos">
+          <ScalarProperty Name="FechaAcuerdo" ColumnName="FechaAcuerdo" />
+          <ScalarProperty Name="Acuerdo" ColumnName="Acuerdo" />
+          <ScalarProperty Name="TipoDeAcuerdoId" ColumnName="TipoDeAcuerdoId" />
+          <ScalarProperty Name="Flag" ColumnName="Flag" />
+          <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+          <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+          <ScalarProperty Name="FechaConsecion" ColumnName="FechaConsecion" />
+          <ScalarProperty Name="FechaAnotaciones" ColumnName="FechaAnotaciones" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="TipoResolucion" ColumnName="TipoResolucion" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="GPIModel.Areas">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anualidades">
+      <EntityTypeMapping TypeName="GPIModel.Anualidad">
+        <MappingFragment StoreEntitySet="Anualidades">
+          <ScalarProperty Name="FechaAnualidad" ColumnName="FechaAnualidad" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="FechaRecibo" ColumnName="FechaRecibo" />
+          <ScalarProperty Name="Recibo" ColumnName="Recibo" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+          <ScalarProperty Name="EsRenovacion" ColumnName="EsRenovacion" />
+          <ScalarProperty Name="NumeroAnualidad" ColumnName="NumeroAnualidad" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="GPIModel.Rol">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Enum" ColumnName="Enum" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="GPIModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="SpkExpiration" ColumnName="SpkExpiration" />
+          <ScalarProperty Name="Spk" ColumnName="Spk" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuariosPublicos">
+      <EntityTypeMapping TypeName="GPIModel.UsuarioPublico">
+        <MappingFragment StoreEntitySet="UsuariosPublicos">
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="FechaCaducidad" ColumnName="FechaCaducidad" />
+          <ScalarProperty Name="FechaSuscripcion" ColumnName="FechaSuscripcion" />
+          <ScalarProperty Name="SpkExpiration" ColumnName="SpkExpiration" />
+          <ScalarProperty Name="Spk" ColumnName="Spk" />
+          <ScalarProperty Name="Suscripcion" ColumnName="Suscripcion" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Telefonos" ColumnName="Telefonos" />
+          <ScalarProperty Name="EstadoProvincia" ColumnName="EstadoProvincia" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publicaciones">
+      <EntityTypeMapping TypeName="GPIModel.Publicacion">
+        <MappingFragment StoreEntitySet="Publicaciones">
+          <ScalarProperty Name="dir_comercial" ColumnName="dir_comercial" />
+          <ScalarProperty Name="tipo_edicto" ColumnName="tipo_edicto" />
+          <ScalarProperty Name="archivo" ColumnName="archivo" />
+          <ScalarProperty Name="logotipo" ColumnName="logotipo" />
+          <ScalarProperty Name="firmado_por" ColumnName="firmado_por" />
+          <ScalarProperty Name="productos" ColumnName="productos" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="calidad" ColumnName="calidad" />
+          <ScalarProperty Name="fecha_solicitud" ColumnName="fecha_solicitud" />
+          <ScalarProperty Name="mandatario" ColumnName="mandatario" />
+          <ScalarProperty Name="clase" ColumnName="clase" />
+          <ScalarProperty Name="titular" ColumnName="titular" />
+          <ScalarProperty Name="distintivo" ColumnName="distintivo" />
+          <ScalarProperty Name="fecha_publicacion" ColumnName="fecha_publicacion" />
+          <ScalarProperty Name="fecha_edicto" ColumnName="fecha_edicto" />
+          <ScalarProperty Name="expediente" ColumnName="expediente" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Favoritos">
+      <EntityTypeMapping TypeName="GPIModel.Favorito">
+        <MappingFragment StoreEntitySet="Favoritos">
+          <ScalarProperty Name="Notas" ColumnName="Notas" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoExpedientes">
+      <EntityTypeMapping TypeName="GPIModel.GrupoExpediente">
+        <MappingFragment StoreEntitySet="GrupoExpedientes">
+          <ScalarProperty Name="FavoritoId" ColumnName="FavoritoId" />
+          <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoMiembros">
+      <EntityTypeMapping TypeName="GPIModel.GrupoMiembro">
+        <MappingFragment StoreEntitySet="GrupoMiembros">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupos">
+      <EntityTypeMapping TypeName="GPIModel.Grupo">
+        <MappingFragment StoreEntitySet="Grupos">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Session">
+      <EntityTypeMapping TypeName="GPIModel.Session">
+        <MappingFragment StoreEntitySet="Session">
+          <ScalarProperty Name="FootMark" ColumnName="FootMark" />
+          <ScalarProperty Name="TokenExp" ColumnName="TokenExp" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sequence">
+      <EntityTypeMapping TypeName="GPIModel.Sequence">
+        <MappingFragment StoreEntitySet="Sequence">
+          <ScalarProperty Name="NextValue" ColumnName="NextValue" />
+          <ScalarProperty Name="KeyName" ColumnName="KeyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Auditoria">
+      <EntityTypeMapping TypeName="GPIModel.Auditoria">
+        <MappingFragment StoreEntitySet="Auditoria">
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Historial" ColumnName="Historial" />
+          <ScalarProperty Name="Evento" ColumnName="Evento" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expedientes">
+      <EntityTypeMapping TypeName="GPIModel.Expediente">
+        <MappingFragment StoreEntitySet="Expedientes">
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+          <ScalarProperty Name="FechaTraslado" ColumnName="FechaTraslado" />
+          <ScalarProperty Name="UbicacionUsuarioId" ColumnName="UbicacionUsuarioId" />
+          <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+          <ScalarProperty Name="LeyId" ColumnName="LeyId" />
+          <ScalarProperty Name="FechaDeEstatus" ColumnName="FechaDeEstatus" />
+          <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+          <ScalarProperty Name="Hora" ColumnName="Hora" />
+          <ScalarProperty Name="FechaDeSolicitud" ColumnName="FechaDeSolicitud" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+          <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AporteAudiovisual">
+      <EntityTypeMapping TypeName="GPIModel.AporteAudiovisual">
+        <MappingFragment StoreEntitySet="AporteAudiovisual">
+          <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+          <ScalarProperty Name="Metraje" ColumnName="Metraje" />
+          <ScalarProperty Name="Clase" ColumnName="Clase" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DerechoDeAutor">
+      <EntityTypeMapping TypeName="GPIModel.DerechoDeAutor">
+        <MappingFragment StoreEntitySet="DerechoDeAutor">
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="Tomo" ColumnName="Tomo" />
+          <ScalarProperty Name="Libro" ColumnName="Libro" />
+          <ScalarProperty Name="Registro" ColumnName="Registro" />
+          <ScalarProperty Name="SoporteMaterial" ColumnName="SoporteMaterial" />
+          <ScalarProperty Name="OtraInfoQueIdentifique" ColumnName="OtraInfoQueIdentifique" />
+          <ScalarProperty Name="VersionesAutorizadas" ColumnName="VersionesAutorizadas" />
+          <ScalarProperty Name="OtraClasificacionAplicable" ColumnName="OtraClasificacionAplicable" />
+          <ScalarProperty Name="EsEnColaboracion" ColumnName="EsEnColaboracion" />
+          <ScalarProperty Name="EsColectiva" ColumnName="EsColectiva" />
+          <ScalarProperty Name="EsIndividual" ColumnName="EsIndividual" />
+          <ScalarProperty Name="EsDerivada" ColumnName="EsDerivada" />
+          <ScalarProperty Name="EsOriginaria" ColumnName="EsOriginaria" />
+          <ScalarProperty Name="EsPublicada" ColumnName="EsPublicada" />
+          <ScalarProperty Name="EsInedita" ColumnName="EsInedita" />
+          <ScalarProperty Name="PaisOrigenId" ColumnName="PaisOrigenId" />
+          <ScalarProperty Name="AnioCreacion" ColumnName="AnioCreacion" />
+          <ScalarProperty Name="Editor" ColumnName="Editor" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="LugarEraPublicacion" ColumnName="LugarEraPublicacion" />
+          <ScalarProperty Name="FechaEdicion" ColumnName="FechaEdicion" />
+          <ScalarProperty Name="LugarEdicion" ColumnName="LugarEdicion" />
+          <ScalarProperty Name="Formato" ColumnName="Formato" />
+          <ScalarProperty Name="Paginas" ColumnName="Paginas" />
+          <ScalarProperty Name="Traduccion" ColumnName="Traduccion" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LiterariasyArtisticas">
+      <EntityTypeMapping TypeName="GPIModel.LiterariasyArtisticas">
+        <MappingFragment StoreEntitySet="LiterariasyArtisticas">
+          <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+          <ScalarProperty Name="Tamano" ColumnName="Tamano" />
+          <ScalarProperty Name="Edicion" ColumnName="Edicion" />
+          <ScalarProperty Name="DireccionImprenta" ColumnName="DireccionImprenta" />
+          <ScalarProperty Name="NombreImprenta" ColumnName="NombreImprenta" />
+          <ScalarProperty Name="DireccionEditor" ColumnName="DireccionEditor" />
+          <ScalarProperty Name="NombreDelEditor" ColumnName="NombreDelEditor" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObrasMusicalesyEscenicas">
+      <EntityTypeMapping TypeName="GPIModel.ObrasMusicalesyEscenicas">
+        <MappingFragment StoreEntitySet="ObrasMusicalesyEscenicas">
+          <ScalarProperty Name="Duracion" ColumnName="Duracion" />
+          <ScalarProperty Name="ClaseGenero" ColumnName="ClaseGenero" />
+          <ScalarProperty Name="EsComercial" ColumnName="EsComercial" />
+          <ScalarProperty Name="EsMusica" ColumnName="EsMusica" />
+          <ScalarProperty Name="EsAutor" ColumnName="EsAutor" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Letra" ColumnName="Letra" />
+          <ScalarProperty Name="Partitura" ColumnName="Partitura" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productores">
+      <EntityTypeMapping TypeName="GPIModel.Productor">
+        <MappingFragment StoreEntitySet="Productores">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Solicitantes">
+      <EntityTypeMapping TypeName="GPIModel.Solicitante">
+        <MappingFragment StoreEntitySet="Solicitantes">
+          <ScalarProperty Name="AdquirioDerecho" ColumnName="AdquirioDerecho" />
+          <ScalarProperty Name="EnCalidad" ColumnName="EnCalidad" />
+          <ScalarProperty Name="ObjetoSolicitud" ColumnName="ObjetoSolicitud" />
+          <ScalarProperty Name="LugarConstitucion" ColumnName="LugarConstitucion" />
+          <ScalarProperty Name="EntidadSolicitante" ColumnName="EntidadSolicitante" />
+          <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="LugarNotificacion" ColumnName="LugarNotificacion" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Autores">
+      <EntityTypeMapping TypeName="GPIModel.Autor">
+        <MappingFragment StoreEntitySet="Autores">
+          <ScalarProperty Name="DatosBibliograficos" ColumnName="DatosBibliograficos" />
+          <ScalarProperty Name="FechaDef" ColumnName="FechaDef" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="LugarNotificacion" ColumnName="LugarNotificacion" />
+          <ScalarProperty Name="Identificacion" ColumnName="Identificacion" />
+          <ScalarProperty Name="Nacionalidad" ColumnName="Nacionalidad" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Profesion" ColumnName="Profesion" />
+          <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+          <ScalarProperty Name="Edad" ColumnName="Edad" />
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FonogramaTituloDeObras">
+      <EntityTypeMapping TypeName="GPIModel.FonogramaTituloDeObra">
+        <MappingFragment StoreEntitySet="FonogramaTituloDeObras">
+          <ScalarProperty Name="NombreAutor" ColumnName="NombreAutor" />
+          <ScalarProperty Name="TituloObra" ColumnName="TituloObra" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="GPIModel.Permiso">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="OtorgadoPorUsuarioId" ColumnName="OtorgadoPorUsuarioId" />
+          <ScalarProperty Name="Acceso" ColumnName="Acceso" />
+          <ScalarProperty Name="Opcion" ColumnName="Opcion" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TitularesDeLaMarca">
+      <EntityTypeMapping TypeName="GPIModel.TitularesDeLaMarca">
+        <MappingFragment StoreEntitySet="TitularesDeLaMarca">
+          <ScalarProperty Name="EnCalidadDe" ColumnName="EnCalidadDe" />
+          <ScalarProperty Name="DireccionParaUbicacion" ColumnName="DireccionParaUbicacion" />
+          <ScalarProperty Name="DireccionParaNotificacion" ColumnName="DireccionParaNotificacion" />
+          <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patentes">
+      <EntityTypeMapping TypeName="GPIModel.Patente">
+        <MappingFragment StoreEntitySet="Patentes">
+          <ScalarProperty Name="Citaciones" ColumnName="Citaciones" />
+          <ScalarProperty Name="Fecha_Pct" ColumnName="Fecha_Pct" />
+          <ScalarProperty Name="Pct" ColumnName="Pct" />
+          <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+          <ScalarProperty Name="RecibidoPorUsuarioId" ColumnName="RecibidoPorUsuarioId" />
+          <ScalarProperty Name="ClasificacionId" ColumnName="ClasificacionId" />
+          <ScalarProperty Name="Resumen" ColumnName="Resumen" />
+          <ScalarProperty Name="Tomo" ColumnName="Tomo" />
+          <ScalarProperty Name="Folio" ColumnName="Folio" />
+          <ScalarProperty Name="anualidades" ColumnName="anualidades" />
+          <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+          <ScalarProperty Name="Registro" ColumnName="Registro" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CronologiaDoctos">
+      <EntityTypeMapping TypeName="GPIModel.CronologiaDocto">
+        <MappingFragment StoreEntitySet="CronologiaDoctos">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="EsTitulo" ColumnName="EsTitulo" />
+          <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="HTMLDOC" ColumnName="HTMLDOC" />
+          <ScalarProperty Name="JSONDOC" ColumnName="JSONDOC" />
+          <ScalarProperty Name="Llave" ColumnName="Llave" />
+          <ScalarProperty Name="CronologiaId" ColumnName="CronologiaId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MandatarioDeLaMarcas">
+      <EntityTypeMapping TypeName="GPIModel.MandatarioDeLaMarca">
+        <MappingFragment StoreEntitySet="MandatarioDeLaMarca">
+          <ScalarProperty Name="MandatarioId" ColumnName="MandatarioId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Renovaciones">
+      <EntityTypeMapping TypeName="GPIModel.Renovacion">
+        <MappingFragment StoreEntitySet="Renovaciones">
+          <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+          <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+          <ScalarProperty Name="Raya" ColumnName="Raya" />
+          <ScalarProperty Name="RenovacionRegistro" ColumnName="RenovacionRegistro" />
+          <ScalarProperty Name="RenovacionExpedienteId" ColumnName="RenovacionExpedienteId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Anotaciones">
+      <EntityTypeMapping TypeName="GPIModel.Anotacion">
+        <MappingFragment StoreEntitySet="Anotaciones">
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="NuevoTitular" ColumnName="NuevoTitular" />
+          <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TitularesDeLaPatente">
+      <EntityTypeMapping TypeName="GPIModel.TitularDeLaPatente">
+        <MappingFragment StoreEntitySet="TitularesDeLaPatente">
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TitularId" ColumnName="TitularId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TitularesEnPatentes">
+      <EntityTypeMapping TypeName="GPIModel.TitularEnPatentes">
+        <MappingFragment StoreEntitySet="TitularesEnPatentes">
+          <ScalarProperty Name="tmpId" ColumnName="tmpId" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnotacionEnExpedientes">
+      <EntityTypeMapping TypeName="GPIModel.AnotacionEnExpedientes">
+        <MappingFragment StoreEntitySet="AnotacionEnExpedientes">
+          <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+          <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+          <ScalarProperty Name="EstatusId" ColumnName="EstatusId" />
+          <ScalarProperty Name="Raya" ColumnName="Raya" />
+          <ScalarProperty Name="EnRegistro" ColumnName="EnRegistro" />
+          <ScalarProperty Name="EnExpedienteId" ColumnName="EnExpedienteId" />
+          <ScalarProperty Name="TipoDeAnotacionId" ColumnName="TipoDeAnotacionId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GacetaSecciones">
+      <EntityTypeMapping TypeName="GPIModel.GacetaSecciones">
+        <MappingFragment StoreEntitySet="GacetaSecciones">
+          <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avisos">
+      <EntityTypeMapping TypeName="GPIModel.Avisos">
+        <MappingFragment StoreEntitySet="Avisos">
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="ActualizadoPorUsuarioId" ColumnName="ActualizadoPorUsuarioId" />
+          <ScalarProperty Name="PublicadoPor" ColumnName="PublicadoPor" />
+          <ScalarProperty Name="Contenido" ColumnName="Contenido" />
+          <ScalarProperty Name="Subtitulo" ColumnName="Subtitulo" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gaceta">
+      <EntityTypeMapping TypeName="GPIModel.Gaceta">
+        <MappingFragment StoreEntitySet="Gaceta">
+          <ScalarProperty Name="FechaEdicto" ColumnName="FechaEdicto" />
+          <ScalarProperty Name="HTMLDOC" ColumnName="HTMLDOC" />
+          <ScalarProperty Name="enabled" ColumnName="enabled" />
+          <ScalarProperty Name="JSONDOC" ColumnName="JSONDOC" />
+          <ScalarProperty Name="FechaPublicacion" ColumnName="FechaPublicacion" />
+          <ScalarProperty Name="GacetaSeccionId" ColumnName="GacetaSeccionId" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="TipoDeRegistroId" ColumnName="TipoDeRegistroId" />
+          <ScalarProperty Name="ExpedienteId" ColumnName="ExpedienteId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

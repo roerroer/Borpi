@@ -1,0 +1,110 @@
+﻿<!-- ADMIN LAYOUT -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/IntranetRPI/" />
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="shortcut icon" sizes="128x128" href="~/fonts/app.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="Bootstrap/custom.css" rel="stylesheet" />
+    <link href="Content/textAngular.css" rel="stylesheet" />
+    <style>
+        .rowInCanvas {
+            width: 100%;
+        }
+
+        .divider {
+            width: 100%;
+            height: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    @{Html.RenderPartial("HeaderRecepcion");}
+    <div class="divider"></div>
+
+    <div ng-app="yumKaaxApp">
+        <div class="row" ng-controller="appCtrlr">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+            <div class="col-md-1"></div>
+            <div app-feedback></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="Scripts/Chart.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-touch.min.js"></script>
+
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.2.9/ui-grid.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.2.9/ui-grid.css" />
+
+    <script src="http://code.angularjs.org/1.5.8/i18n/angular-locale_es-es.js"></script>
+
+    <script src="Scripts/textAngular.min.js"></script>
+    <script src="Scripts/textAngular-rangy.min.js"></script>
+    <script src="Scripts/textAngular-sanitize.min.js"></script>
+    <script src="Scripts/textAngularSetup.js"></script>
+
+    @*<script src="Scripts/jrzStorage.js"></script>
+        <script src="Scripts/ui-utils.js"></script>
+
+        <script src="Spa/Factories/authFactory.js"></script>
+
+        <script src="Spa/Controllers/appCtrlr.js"></script>
+        <script src="Spa/Controllers/Recepcion/AvisosCtrlr.js"></script>
+
+        <script src="Spa/Factories/UsersFactory.js"></script>
+        <script src="Spa/Directives/GrlDirectives.js"></script>
+        <script src="Spa/Directives/Feedback.js"></script>
+
+        <script src="Spa/App/appRecepcion.js"></script>
+        <script src="Spa/App/Temp.js"></script>*@
+    <script src="Spa/App/rpi_recep.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <style>
+        #textAngular-editableFix-010203040506070809 {
+            visibility: hidden;
+        }
+
+        .ta-editor {
+            min-height: 500px;
+            height: auto;
+            overflow: auto;
+            font-family: inherit;
+            font-size: 100%;
+        }
+    </style>
+</body>
+
+</html>

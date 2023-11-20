@@ -1,0 +1,324 @@
+﻿<div class="form-group">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Situacion Administrativa</label>
+            <div class="form-display">{{model.SituacionAdmin}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>En Fecha</label>
+            <div class="form-display">{{model.Expediente.FechaDeEstatus | date:'MM/dd/yyyy'}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Tipo</label>
+            <div class="form-display">{{model.Tipo.Nombre}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Tomo</label>
+            <div class="form-display">{{model.DerechoDeAutor.Tomo}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Folio</label>
+            <div class="form-display">{{model.DerechoDeAutor.Folio}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Libro</label>
+            <div class="form-display">{{model.DerechoDeAutor.Libro}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-12">
+            <label>Titulo</label>
+            <textarea rows="4" cols="10" name="Titulo" ng-model="model.DerechoDeAutor.Titulo" class="form-control" disabled />
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>No. Paginas</label>
+            <div class="form-display">{{model.DerechoDeAutor.Paginas}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Formato</label>
+            <div class="form-display">{{model.DerechoDeAutor.Formato}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Lugar Edición</label>
+            <div class="form-display">{{model.DerechoDeAutor.LugarEdicion}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Fecha</label>
+            <div class="form-display">{{model.DerechoDeAutor.FechaEdicion}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Lugar Publicacion</label>
+            <div class="form-display">{{model.DerechoDeAutor.LugarEraPublicacion}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Fecha Publicacion</label>
+            <div class="form-display">{{model.DerechoDeAutor.FechaPublicacion}}</div>
+        </div>
+        <div class="col-md-4">
+            <label>Editor</label>
+            <div class="form-display">{{model.DerechoDeAutor.Editor}}</div>
+        </div>
+        <div class="col-md-1">
+            <label>Año Creación</label>
+            <div class="form-display">{{model.DerechoDeAutor.AnioCreacion}}</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-3">
+            <label>Pais Origen</label>
+            <div class="form-display">{{resolvePais(model.DerechoDeAutor.PaisOrigenId)}}</div>
+        </div>
+        <div class="col-md-1">
+            <label>La Obra es</label>
+        </div>
+        <div class="col-md-1">
+            <div class="checkbox">
+                <label>
+                    Inedita<input type="checkbox" ng-model="model.DerechoDeAutor.EsInedita" style="width:15px;" disabled>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="checkbox">
+                <label>
+                    Publicada<input type="checkbox" ng-model="model.DerechoDeAutor.EsPublicada" style="width:15px;" disabled>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="checkbox">
+                <label>
+                    Originaria<input type="checkbox" ng-model="model.DerechoDeAutor.EsOriginaria" style="width:15px;" disabled>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="checkbox">
+                <label>
+                    Derivada<input type="checkbox" ng-model="model.DerechoDeAutor.EsDerivada" style="width:15px;" disabled>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="checkbox">
+                <label>
+                    Individual<input type="checkbox" ng-model="model.DerechoDeAutor.EsIndividual" style="width:15px;" disabled>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="checkbox">
+                <label>
+                    Colectiva<input type="checkbox" ng-model="model.DerechoDeAutor.EsColectiva" style="width:15px;" disabled>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <div class="checkbox">
+                <label>
+                    En Colaboración<input type="checkbox" ng-model="model.DerechoDeAutor.EsEnColaboracion" style="width:15px;" disabled>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.Autores && model.Autores.length">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Autores</label>
+            <div class="form-display" ng-repeat="i in model.Autores">{{i.NombreAutor}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.Productor">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Productor(es)</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label>Nombre</label>
+            <div class="form-display">{{model.Productor.Nombre}}</div>
+        </div>
+        <div class="col-md-6">
+            <label>Nacionalidad</label>
+            <div class="form-display">{{model.Productor.Nacionalidad}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.FonogramaArtistas && model.FonogramaArtistas.length">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Fonograma - Artistas</label>
+            <div class="form-display" ng-repeat="i in model.FonogramaArtistas">{{i.NombreArtista}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.FonogramaTituloDeObras && model.FonogramaTituloDeObras.length">
+    <div class="row">
+        <div class="col-md-8">
+            <label>Fonograma - Titulo De Obras</label>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="i in model.FonogramaTituloDeObras">
+                        <td>{{i.TituloObra}}</td>
+                        <td>{{i.NombreAutor}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.LiterariasyArtisticas">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Literarias y Artisticas</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label>Nombre Del Editor</label>
+            <div class="form-display">{{model.LiterariasyArtisticas.NombreDelEditor}}</div>
+        </div>
+        <div class="col-md-6">
+            <label>Nombre Imprenta</label>
+            <div class="form-display">{{model.LiterariasyArtisticas.NombreImprenta}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.AporteAudiovisual">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Aporte Audiovisual</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <label>Nombre</label>
+            <div class="form-display">{{model.AporteAudiovisual.Director}}</div>
+        </div>
+        <div class="col-md-4">
+            <label>Nacionalidad</label>
+            <div class="form-display">{{model.AporteAudiovisual.Genero}}</div>
+        </div>
+        <div class="col-md-4">
+            <label>Nacionalidad</label>
+            <div class="form-display">{{model.AporteAudiovisual.Clase}}</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group" ng-if="model.GuionAutores && model.GuionAutores.length">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Guion Autores</label>
+            <div class="form-display" ng-repeat="i in model.GuionAutores">{{i.NombreAutor}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.AudiovisualAutores && model.AudiovisualAutores.length">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Audiovisual - Autores</label>
+            <div class="form-display" ng-repeat="i in model.AudiovisualAutores">{{i.NombreAutor}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.ComposicionAutores && model.ComposicionAutores.length">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Composicion - Autores</label>
+            <div class="form-display" ng-repeat="i in model.ComposicionAutores">{{i.NombreAutor}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-if="model.ObrasMusicalesyEscenicas">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Obras Musicales y Escenicas</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label>Partitura</label>
+            <div class="form-display">{{model.ObrasMusicalesyEscenicas.Partitura}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Letra</label>
+            <div class="form-display">{{model.ObrasMusicalesyEscenicas.Letra}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Genero</label>
+            <div class="form-display">{{model.ObrasMusicalesyEscenicas.Genero}}</div>
+        </div>
+        <div class="col-md-3">
+            <label>Clase-Genero</label>
+            <div class="form-display">{{model.ObrasMusicalesyEscenicas.ClaseGenero}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-8">
+            <label>Otra Clasificación</label>
+            <div class="form-display">{{model.DerechoDeAutor.OtraClasificacionAplicable}}</div>
+        </div>
+        <div class="col-md-4">
+            <label>Versiones Autorizadas</label>
+            <div class="form-display">{{model.DerechoDeAutor.VersionesAutorizadas}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Otra Info.</label>
+            <textarea rows="4" cols="10" name="Titulo" ng-model="model.DerechoDeAutor.OtraInfoQueIdentifique" class="form-control" disabled />
+        </div>
+        <div class="col-md-6">
+            <label>Tipo de Soporte</label>
+            <textarea rows="4" cols="10" name="Titulo" ng-model="model.DerechoDeAutor.SoporteMaterial" class="form-control" disabled />
+        </div>
+    </div>
+</div>

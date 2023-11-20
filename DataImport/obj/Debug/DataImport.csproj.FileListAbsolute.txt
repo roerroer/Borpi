@@ -1,0 +1,12 @@
+C:\DevOpsSourceRPILegacy\DataImport\obj\Debug\DataImport.csproj.AssemblyReference.cache
+C:\DevOpsSourceRPILegacy\DataImport\obj\Debug\DataImport.csproj.ResolveComReference.cache
+C:\DevOpsSourceRPILegacy\DataImport\obj\Debug\DataImport.csproj.CoreCompileInputs.cache
+C:\DevOpsSourceRPILegacy\DataImport\bin\Debug\DataImport.exe.config
+C:\DevOpsSourceRPILegacy\DataImport\bin\Debug\DataImport.exe
+C:\DevOpsSourceRPILegacy\DataImport\bin\Debug\DataImport.pdb
+C:\DevOpsSourceRPILegacy\DataImport\bin\Debug\Dapper.dll
+C:\DevOpsSourceRPILegacy\DataImport\bin\Debug\Dapper.pdb
+C:\DevOpsSourceRPILegacy\DataImport\bin\Debug\Dapper.xml
+C:\DevOpsSourceRPILegacy\DataImport\obj\Debug\DataImport.csproj.CopyComplete
+C:\DevOpsSourceRPILegacy\DataImport\obj\Debug\DataImport.exe
+C:\DevOpsSourceRPILegacy\DataImport\obj\Debug\DataImport.pdb

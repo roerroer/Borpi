@@ -1,0 +1,102 @@
+﻿
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Mi Perfil</h3>
+    </div>
+
+    <div class="panel-body">
+        <div class="form-group">
+            <div class="bs-box bs-box-green bs-box-none row">
+
+                <div class="container">
+                    <form class="simple-form" name='form' novalidate>
+
+                        <input ng-hide="true" ng-model="usuario.Id" />
+
+                        <div class="form-group">
+                            <label>Cuenta</label>
+                            <input type="email" placeholder="email" class="form-control" name="Cuenta" ng-model="usuario.Cuenta" required>
+                            <span class="label label-danger" ng-show="form.Cuenta.$error.required">Cuenta de usuario es requerido<br /></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Nombre de la cuenta" class="form-control" name="Nombre" ng-model="usuario.Nombre" required>
+                            <span class="label label-danger" ng-show="form.Nombre.$error.required">Nombre de usuario es requerido<br /></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Empresa</label>
+                            <input type="text" placeholder="Nombre de la cuenta" class="form-control" name="Empresa" ng-model="usuario.Empresa">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Dirección</label>
+                            <input type="text" placeholder="Direccion" class="form-control" name="Direccion" ng-model="usuario.Direccion">
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <label>Ciudad</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="Ciudad" ng-model="usuario.Ciudad" class="form-control" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Estado/Provincia:</label>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="text" name="EstadoProvincia" ng-model="usuario.EstadoProvincia" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pais</label>
+                            <select class="form-control" name="PaisId" ng-model="usuario.PaisId" ng-options="pais.Id as pais.Nombre for pais in paises"></select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Telefonos</label>
+                            <input type="text" name="Telefonos" ng-model="usuario.Telefonos" class="form-control" />
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <label>Password</label>
+                                    </div>
+                                    <div class="col-md-4" ng-class="{'has-error': form.Pwd.$error.required || form.Pwd.$error.equals}">
+                                        <input type="Password" name="Pwd" ng-model="usuario.Pwd" equals="{{usuario.confirm_password}}" class="form-control" required />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label>Reenter Password</label>
+                                    </div>
+                                    <div class="col-md-4" ng-class="{'has-error': form.confirm_password.$error.required || form.confirm_password.$error.equals}">
+                                        <input type="password" name="confirm_password" ng-model="usuario.confirm_password" equals="{{usuario.Pwd}}" class="form-control" required />
+                                        <div ng-show="form.confirm_password.$error.equals">La contraseña no coincide</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-2">
+                                <a href="/Publico/#" class="btn btn-default">Cancelar</a>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-primary" ng-click="save(usuario)" ng-disabled="form.$invalid">Grabar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

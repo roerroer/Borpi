@@ -1,0 +1,11 @@
+C:\DevOpsSourceRPILegacy\Fonetica\bin\Debug\Fonetica.exe.config
+C:\DevOpsSourceRPILegacy\Fonetica\bin\Debug\Fonetica.exe
+C:\DevOpsSourceRPILegacy\Fonetica\bin\Debug\Fonetica.pdb
+C:\DevOpsSourceRPILegacy\Fonetica\bin\Debug\Dapper.dll
+C:\DevOpsSourceRPILegacy\Fonetica\bin\Debug\Dapper.pdb
+C:\DevOpsSourceRPILegacy\Fonetica\bin\Debug\Dapper.xml
+C:\DevOpsSourceRPILegacy\Fonetica\obj\Debug\Fonetica.csproj.AssemblyReference.cache
+C:\DevOpsSourceRPILegacy\Fonetica\obj\Debug\Fonetica.csproj.CoreCompileInputs.cache
+C:\DevOpsSourceRPILegacy\Fonetica\obj\Debug\Fonetica.csproj.CopyComplete
+C:\DevOpsSourceRPILegacy\Fonetica\obj\Debug\Fonetica.exe
+C:\DevOpsSourceRPILegacy\Fonetica\obj\Debug\Fonetica.pdb

@@ -1,0 +1,16 @@
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\PI.Models.dll.config
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\PI.Models.dll
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\PI.Models.pdb
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\EntityFramework.dll
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\System.ComponentModel.DataAnnotations.dll
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\System.Data.DataSetExtensions.dll
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\System.Data.dll
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\System.Xml.Linq.dll
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\EntityFramework.xml
+C:\DevOpsSourceRPILegacy\PI.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\DevOpsSourceRPILegacy\PI.Models\obj\Debug\PI.Models.csproj.AssemblyReference.cache
+C:\DevOpsSourceRPILegacy\PI.Models\obj\Debug\PI.Models.csproj.CoreCompileInputs.cache
+C:\DevOpsSourceRPILegacy\PI.Models\obj\Debug\PI.Models.csproj.CopyComplete
+C:\DevOpsSourceRPILegacy\PI.Models\obj\Debug\PI.Models.dll
+C:\DevOpsSourceRPILegacy\PI.Models\obj\Debug\PI.Models.pdb

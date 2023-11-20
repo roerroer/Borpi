@@ -1,0 +1,9 @@
+C:\DevOpsSourceRPILegacy\PI.Common\bin\Debug\PI.Common.dll
+C:\DevOpsSourceRPILegacy\PI.Common\bin\Debug\PI.Common.pdb
+C:\DevOpsSourceRPILegacy\PI.Common\bin\Debug\log4net.dll
+C:\DevOpsSourceRPILegacy\PI.Common\bin\Debug\log4net.xml
+C:\DevOpsSourceRPILegacy\PI.Common\obj\Debug\PI.Common.csproj.AssemblyReference.cache
+C:\DevOpsSourceRPILegacy\PI.Common\obj\Debug\PI.Common.csproj.CoreCompileInputs.cache
+C:\DevOpsSourceRPILegacy\PI.Common\obj\Debug\PI.Common.csproj.CopyComplete
+C:\DevOpsSourceRPILegacy\PI.Common\obj\Debug\PI.Common.dll
+C:\DevOpsSourceRPILegacy\PI.Common\obj\Debug\PI.Common.pdb

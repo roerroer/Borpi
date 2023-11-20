@@ -1,0 +1,73 @@
+﻿@model PI.Models.Gaceta
+
+@{
+    Layout = "~/Views/Shared/_Empty.cshtml";
+    dynamic jsonDoc = Newtonsoft.Json.Linq.JObject.Parse(Model.JSONDOC);
+
+    string publicacion = string.Empty;
+    // FECHA DE PUBLICACION
+    publicacion += "FECHA DE PUBLICACION: " + Model.FechaPublicacion.ToShortDateString();
+
+    // titulo del edicto
+    //prnAnotacion += jsonDoc.tipoEdicto; //ejemplo: EDICTO DE TRASPASO Y CAMBIO DE NOMBRE.
+
+    // EXPEDIENTE
+    publicacion += " EXP: " + Model.Numero.Insert(4, "-");
+
+    // FECHA DE SOLICITUD
+    publicacion += "<br/>";
+    publicacion += Model.HTMLDOC + " ";
+
+    publicacion += "<br/>";
+    publicacion += "<b>";
+    publicacion += jsonDoc.Firma;
+    publicacion += ", Registro de la Propiedad Intelectual, Ministerio de Economía. ";
+    publicacion += "</b>";
+
+
+}
+
+<style>
+    .logoEdicto {
+        width: 300px;
+        height: 300px;
+    }
+
+    .pagina {
+        page-break-after: always;
+        width: 100%;
+        height: auto;
+    }
+
+    .extra {
+        height: 200px;
+    }
+
+    @@media only screen and (max-width:768px) {
+        .logoEdicto {
+            width: 100%;
+            height: 100%;
+        }
+
+        .edicto {
+            margin: 5%;
+        }
+
+            .edicto .TMlogo {
+                width: 40%;
+            }
+    }
+</style>
+<div id="@Model.Id" @(ViewBag.Many ? "class=pagina" : "")>
+    <div class="edicto">
+
+        <p>
+            @*<h4>Fecha de Publicación: @Model.cronologia.Fecha.ToShortDateString()</h4>
+            <br />*@
+            
+            @Html.Raw(@publicacion)
+        </p>
+        <br />
+        @*<h4>@Model.getFirma()</h4>*@
+    </div>
+</div>

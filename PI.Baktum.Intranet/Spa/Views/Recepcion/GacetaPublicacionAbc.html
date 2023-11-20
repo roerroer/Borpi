@@ -1,0 +1,94 @@
+﻿<br>
+<style>
+    #lstAbc:after {
+        content: "Publicacion en la Gaceta";
+    }
+</style>
+<div class="boxy" id="lstAbc">
+    <form class="simple-form" name='form' novalidate>
+
+        <input ng-hide="publicacion.Id" ng-model="publicacion.Id" /><br />
+
+        <div class="row">
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label>Seccion</label>
+                    <select class="form-control" name="GacetaSeccionId" ng-change="onSeccionChange()"
+                            ng-model="publicacion.GacetaSeccionId" ng-options="s.Id as s.Nombre for s in secciones"></select>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <select class="form-control" name="TipoDeRegistroId" ng-model="publicacion.TipoDeRegistroId" ng-options="t.Id as t.Nombre for t in tiposDeRegistro"></select>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label for="search">Fecha de Publicacion</label>
+
+                    <p class="input-group">
+                        <input type="text" name="fechaSelected" ng-model="publicacion.FechaPublicacion" class="form-control"
+                               uib-datepicker-popup="{{format}}" ng-model-options='{ debounce: 1000 }'
+                               is-open="fp.opened" datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)" close-text="Close" />
+
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openFp($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label>Numero</label>
+                    <input type="text" class="form-control" ng-model="publicacion.Numero">
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label for="search">Fecha del Edicto</label>
+
+                    <p class="input-group">
+                        <input type="text" name="FechaEdicto" ng-model="publicacion.FechaEdicto" class="form-control"
+                               uib-datepicker-popup="{{format}}" ng-model-options='{ debounce: 1000 }'
+                               is-open="fe.opened" datepicker-options="dateOptions"
+                               date-disabled="disabled(date, mode)" close-text="Close" />
+
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openFe($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label>Encabezado</label>
+                    <input type="text" class="form-control" ng-model="metaData.tipoEdicto">
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="form-group">
+                    <label>Firma</label>
+                    <input type="text" class="form-control" ng-model="metaData.Firma">
+                </div>
+            </div>
+        </div>
+
+        <!-- Generar Inputs based on JSON data-->
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-10">
+                    <text-angular name="htmlcontent" ng-model="publicacion.HTMLDOC"></text-angular>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" ng-click="update(publicacion)" ng-disabled="form.$invalid || isUnchanged(publicacion, metaData)">Grabar</button>
+        <a href="Recepcion#/Gaceta/" class=" btn btn-default">Cancelar</a>
+    </form>
+</div>

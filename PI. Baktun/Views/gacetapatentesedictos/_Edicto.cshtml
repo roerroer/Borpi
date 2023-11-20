@@ -1,0 +1,218 @@
+﻿@model PI.Models.SnapshotPatente
+
+@{
+    Layout = "~/Views/Shared/_Empty.cshtml";
+    dynamic anotacion = Newtonsoft.Json.Linq.JObject.Parse(Model.Gaceta.JSONDOC);
+
+    string tipoDePatente = String.Empty;
+    string imagen = anotacion.path != null ? Common.Web.Util.GetAppSetting("basePatImgs") + anotacion.path : "/eRegistroAPI/logos/000000000.png";
+    String firma = string.Empty;
+
+    //if (Model.TipoDeRegistroId == PI.Common.TiposDeRegistroEnPatentes.DibujosIndustriales.Id)
+    //{
+    //    imagen += PI.Common.TiposDeRegistroEnPatentes.DibujosIndustriales.Codigo;
+    //}
+    //if (Model.TipoDeRegistroId == PI.Common.TiposDeRegistroEnPatentes.RegistrosDeDisenoIndustrial.Id)
+    //{
+    //    imagen += PI.Common.TiposDeRegistroEnPatentes.RegistrosDeDisenoIndustrial.Codigo;
+    //}
+    //if (Model.TipoDeRegistroId == PI.Common.TiposDeRegistroEnPatentes.PatentesPrecautorias.Id)
+    //{
+    //    imagen += PI.Common.TiposDeRegistroEnPatentes.PatentesPrecautorias.Codigo;
+    //}
+    //if (Model.TipoDeRegistroId == PI.Common.TiposDeRegistroEnPatentes.ModelosDeUtilidad.Id)
+    //{
+    //    imagen += PI.Common.TiposDeRegistroEnPatentes.ModelosDeUtilidad.Codigo;
+    //}
+    //if (Model.TipoDeRegistroId == PI.Common.TiposDeRegistroEnPatentes.PatentesDeInvencion.Id)
+    //{
+    //    imagen += PI.Common.TiposDeRegistroEnPatentes.PatentesDeInvencion.Codigo;
+    //}
+    //if (Model.TipoDeRegistroId == PI.Common.TiposDeRegistroEnPatentes.SolicitudesInternacionales.Id)
+    //{
+    //    imagen += PI.Common.TiposDeRegistroEnPatentes.SolicitudesInternacionales.Codigo;
+    //}
+
+    ////imagen += Model.Numero.Trim() + ".png" ; //aqui va segun la configuracion en tu file system
+    //imagen += "000000000.png";
+
+    //imagen = Common.Web.Util.GetAppSetting("patImagen") + imagen;
+
+    ////tipoDeMarca = "Colectiva", "Certificación "
+
+    //string color = string.Empty; //"a Color" this should be saved in the database at the time of printing the edicto
+
+    //string prnEdicto = string.Empty;
+    //string spacing5 = string.Concat(Enumerable.Repeat("&nbsp;", 5));
+    //string spacing8 = string.Concat(Enumerable.Repeat("&nbsp;", 8));
+    //string spacing10 = string.Concat(Enumerable.Repeat("&nbsp;", 10));
+    //// EXPEDIENTE
+    //// prnEdicto += " Expediente: " + Model.expediente;
+    //prnEdicto += "<em>Expediente Número: </em>" + spacing5 + Model.Numero.Insert(4, "-");
+
+    //if (Model.Patente.Pct != null)
+    //{
+    //    prnEdicto += spacing10 + " <em>Número de Solicitud PCT: </em>" + spacing5 + "PCT/" + Model.Patente.Pct.Insert(6, "/");
+    //}
+
+
+    //prnEdicto += "<br/>";
+    //prnEdicto += "<em>Fecha de presentación de la solicitud: </em>" + spacing5 + Model.FechaDeSolicitud.ToLongDateString();
+    //prnEdicto += spacing10;
+
+    //if (Model.Patente.Fecha_Pct != null)
+    //{
+    //    prnEdicto += "<em>Fecha de presentación Internacional: </em>" + spacing5 + Model.Patente.Fecha_Pct.Value.ToLongDateString();
+    //}
+    //prnEdicto += "<br/>";
+
+    //prnEdicto += "<em>Nombre del solicitante: </em>";
+    //if (Model.titulares != null)
+    //{
+    //    prnEdicto += "<table border='0' width='400' style='font-size: 14px;'>";
+    //    prnEdicto += "<tr><th></th><th></th></tr>";
+
+    //    foreach (var s in Model.titulares)
+    //    {
+    //        prnEdicto += "<tr>";
+    //        prnEdicto += "<td>" + spacing10 + "</td>";
+    //        prnEdicto += "<td>" + s.Nombre.Trim() + "</td>";
+    //        prnEdicto += "</tr>";
+    //    }
+    //    prnEdicto += "</table>";
+    //}
+    //else
+    //{
+    //    prnEdicto += "<br/>";
+    //}
+
+    //prnEdicto += "<em>Representante Legal: </em>" + spacing5 + Model.agente.Nombre;
+    //prnEdicto += spacing10;
+    //prnEdicto += "<br/>";
+
+    //prnEdicto += "<em>Inventor(es): </em>";
+
+    //prnEdicto += "<table border='0' width='400' style='font-size: 14px;'>";
+    //prnEdicto += "<tr><th></th><th></th></tr>";
+
+    //foreach (var i in Model.inventores)
+    //{
+    //    prnEdicto += "<tr>";
+    //    prnEdicto += "<td>" + spacing10 + "</td>";
+    //    prnEdicto += "<td>" + i.Nombre.Trim() + "</td>";
+    //    prnEdicto += "</tr>";
+    //}
+
+    //prnEdicto += "</table>";
+    //prnEdicto += "<br/>";
+
+    //prnEdicto += "<em>Prioridad Extranjera: </em>";
+    //prnEdicto += "<br/>";
+
+    //prnEdicto += "<table border='0' width='400' style='font-size: 14px;'>";
+    //prnEdicto += "<tr><th>Pais</th><th>Fecha</th><th>Nro</th></tr>";
+
+    //foreach (var p in Model.prioridades)
+    //{
+    //    prnEdicto += "<tr>";
+    //    prnEdicto += "<td>" + p.NombrePais + "</td>";
+    //    prnEdicto += "<td>" + p.Fecha.ToShortDateString() + "</td>";
+    //    prnEdicto += "<td>" + p.SolicitudP + "</td>";
+    //    prnEdicto += "</tr>";
+
+
+    //}
+    //prnEdicto += "</table>";
+
+    //if (Model.classificationIPC.Count > 0) {
+    //    prnEdicto += "<em>Simbolos de clasificación: <em>" + spacing5;
+    //    foreach (var i in Model.classificationIPC)
+    //    {
+    //        prnEdicto += i.Classificacion.Trim() + spacing5;
+    //    }
+    //    prnEdicto += "<br/>";
+    //}
+
+    //prnEdicto += "<em>Invento:</em> " + spacing5 + Model.Patente.Descripcion;
+    //prnEdicto += "<br/>";
+
+    //prnEdicto += "<em>Resumen:</em>" + spacing5 + Model.Patente.Resumen;
+    //prnEdicto += "<br/>";
+
+
+    ////Fecha de edicto
+    //firma += "Guatemala, " + Model.cronologia.Fecha.ToLongDateString();
+
+    //firma += ", Registro de la Propiedad Intelectual, Ministerio de Economía. ";
+    //firma += "</b>";
+
+    string prnEdicto = string.Empty;
+    // FECHA DE PUBLICACION
+    // prnAnotacion += "Guatemala, " + Model.Gaceta.FechaPublicacion.ToLongDateString();
+
+    // titulo del edicto
+    prnEdicto += anotacion.tipoEdicto; //ejemplo: EDICTO DE TRASPASO Y CAMBIO DE NOMBRE.
+
+    // EXPEDIENTE
+    prnEdicto += " EXP: " + Model.Numero.Insert(4, "-");
+
+    // FECHA DE SOLICITUD
+    prnEdicto += "<br/>";
+    prnEdicto += Model.Gaceta.HTMLDOC + " ";
+
+    prnEdicto += "<br/>";
+    prnEdicto += "<b>";
+    prnEdicto += anotacion.Firma;
+    prnEdicto += ", Registro de la Propiedad Intelectual, Ministerio de Economía. ";
+    prnEdicto += "</b>";
+}
+
+<style>
+    .logoEdicto {
+        width: 300px;
+        height: 300px;
+    }
+
+    .pagina {
+        page-break-after: always;
+        width: 100%;
+        height: auto;
+    }
+
+    .extra {
+        height: 200px;
+    }
+
+    @@media only screen and (max-width:768px) {
+        .logoEdicto {
+            width: 100%;
+            height: 100%;
+        }
+
+        .edicto {
+            margin: 5%;
+        }
+
+            .edicto .TMlogo {
+                width: 40%;
+            }
+    }
+</style>
+<div id="@Model.Id" @(ViewBag.Many ? "class=pagina" : "")>
+    <div class="edicto">
+        <p>
+            <h4>Fecha de Publicación: @Model.cronologia.Fecha.ToShortDateString()</h4>
+            <br />
+
+            @Html.Raw(@prnEdicto)
+
+        </p>
+
+        <img style="width:inherit;" src="@imagen" onerror="this.onerror=null;this.src='/eRegistroAPI/Logos/placeholder.png';"/>
+
+        <p>
+            @Html.Raw(firma)
+        </p>
+
+    </div>
+</div>

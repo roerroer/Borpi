@@ -1,0 +1,96 @@
+﻿
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Titulares</label>
+                    <div class="form-display" ng-repeat="t in model.Titulares">{{t.Nombre}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Agente</label>
+                    <div class="form-display">{{model.Agente.Nombre}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Inventores</label>
+                    <div class="form-display" ng-repeat="i in model.Inventores">{{i.Nombre}}</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="bs-box bs-box-yellow row">
+                <label>PRIORIDAD</label>
+                <table class="table table-hover">
+                    <thead>
+                        <!--un boton para agregar mas prioridades se activa una vez que se haya guardado el expediente-->
+                        <tr>
+                            <th>Pais</th>
+                            <th>Fecha</th>
+                            <th>Referencia</th>
+                            <th>Numero</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="p in model.Prioridades">
+                            <td>{{resolvePais(p.Prioridad.PaisId)}}</td>
+                            <td>{{p.Prioridad.Fecha | date:"dd/MM/yyyy"}}</td>
+                            <td>{{p.Prioridad.Tipo_referencia}}</td>
+                            <td>{{p.Prioridad.SolicitudP}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Resumen</label>
+                    <textarea rows="4" cols="10" name="Resumen" ng-model="model.Patente.Resumen" class="form-control" disabled />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="bs-box bs-box-blue row">
+                <label>Anualidades</label><br />
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Fecha</th>
+                            <th>Recibo</th>
+                            <th>Fecha Recibo</th>
+                            <th>Valor</th>
+                            <th>Renovacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="a in model.Anualidades">
+                            <td>{{a.NumeroAnualidad}}</td>
+                            <td>{{p.FechaAnualidad | date:"dd/MM/yyyy"}}</td>
+                            <td>{{a.Recibo}}</td>
+                            <td>{{a.FechaRecibo | date:"dd/MM/yyyy"}}</td>
+                            <td>{{a.Valor}}</td>
+                            <td>{{a.EsRenovacion? "SI": "NO"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="bs-box bs-box-red row">
+                <label>Dibujo</label><br />
+            </div>
+        </div>
